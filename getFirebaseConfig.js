@@ -32,9 +32,7 @@ try {
 
     const result = data.replace(/'<fbconfig>'/g, configJson);
   
-    fs.writeFile('./ui/src/Config.js', result, 'utf8', function (err) {
-       if (err) return console.error('error writing to ui/src/Config.js', err);
-    });
+    fs.writeFileSync('./ui/src/Config.js', result, 'utf8');
   });
 }
 catch(err) {

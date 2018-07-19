@@ -40,6 +40,7 @@ npm run build --prefix ./ui
 # retrieve UI config vars 
 firebase setup:web > config.txt
 node getFirebaseConfig.js config.txt
+chmod +x ./ui/src/Config.js
 
 firebase deploy --only functions:recordMessage
 firebase deploy --only database
