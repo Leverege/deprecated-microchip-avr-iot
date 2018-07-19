@@ -33,7 +33,9 @@ In the Cloud Console, run:
 sh setup.sh
 ```
 
-At the prompt, enter your AVR-IoT device's ID (you can find this by scanning the QR code on your device). 
+## At the prompt, enter your AVR-IoT device's ID 
+
+You can find this by scanning the QR code on your device. 
 
 **The setup script will run for several minutes**
 
