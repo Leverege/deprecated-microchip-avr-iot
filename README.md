@@ -14,6 +14,12 @@ Before getting started, you'll need to **create a GCP project and enable billing
 
     [LEARN HOW TO ENABLE BILLING](https://cloud.google.com/billing/docs/how-to/modify-project)
 
+3. Make note of your project ID
+
+    Your project ID is not necessarily the same as your project name. It is typically your project name in all lowercase, with dashes instead of spaces. So a project named "Demo Project" might become "demo-project."
+
+    <img src="https://storage.googleapis.com/avr-iot-media/project-id.png">
+
 ## 2. Create a Firebase Project
 
 1. Launch the Firebase Console

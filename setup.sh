@@ -1,10 +1,16 @@
 #!/bin/bash
 CLOUD_REGION=us-central1
 
+echo
 echo Welcome to the AVR-IoT interactive quick setup
+echo
 
 # get device name, project name and device public key from user
-read -p 'Please Enter Device ID: ' DEVICE_ID
+echo
+read -p 'Please enter your project ID (note: this may be different than the project name): ' GOOGLE_CLOUD_PROJECT
+echo
+read -p 'Please enter device ID: ' DEVICE_ID
+echo
 
 # set the project and tell firebase to use it firebase
 gcloud config set project $GOOGLE_CLOUD_PROJECT
@@ -30,7 +36,6 @@ echo Installing UI dependencies (this may take a few minutes)...
 npm install --prefix ./ui/
 
 # build UI
-# TODO: create UI build
 echo Creating a production build of the UI (this may take a few minute)...
 npm run build --prefix ./ui
 
