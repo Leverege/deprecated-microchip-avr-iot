@@ -22,7 +22,7 @@ Before getting started, you'll need to **create a GCP project and enable billing
 
 2. Select 'Add project'
 
-<img src="https://storage.googleapis.com/avr-iot-media/fb-add.png" heigh="150">
+<img src="https://storage.googleapis.com/avr-iot-media/fb-add.png" height="150">
 
 3. In the Project Name field, select the GCP project you created or selected above
 
@@ -34,4 +34,4 @@ Before getting started, you'll need to **create a GCP project and enable billing
 
 That's it for prerequisites! Click the button below to clone this repo into your project, and follow the Cloud Shell tutorials to complete your deployment. 
 
-[![Open this project in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/<acct>/<repo>&tutorial=tutorial.md)
+[![Open this project in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Leverege/microchip-avr-iot&tutorial=tutorial.md)
