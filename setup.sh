@@ -27,25 +27,18 @@ gcloud iot registries create AVR-IOT --region=$CLOUD_REGION --event-notification
 gcloud iot devices create "d$DEVICE_ID" --region=$CLOUD_REGION --registry=AVR-IOT
 
 #install npm dependencies
-# TODO: check relative paths after clone in shell
 echo Installing Cloud Function dependencies \(this may take a few minutes\)...
 npm install --prefix ./functions/
 echo Installing UI dependencies \(this may take a few minutes\)...
 npm install --prefix ./ui/
 
-# build UI
-echo Creating a production build of the UI \(this may take a few minute\)...
-npm run build --prefix ./ui
-
 # retrieve UI config vars 
 firebase setup:web > config.txt
 node getFirebaseConfig.js config.txt
 
-# wait for ui/src/Config.js to be created
-while [ ! -f /ui/src/Config.js ]
-do 
-  sleep 5
-done
+# build UI
+echo Creating a production build of the UI \(this may take a few minute\)...
+npm run build --prefix ./ui
 
 chmod +x ./ui/src/Config.js
 
