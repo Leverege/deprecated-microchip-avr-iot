@@ -7,14 +7,11 @@ echo
 
 # get device name, project name and device public key from user
 echo
-read -p 'Please enter your project ID (note: this may be different than the project name): ' GCP_ID
-echo
 read -p 'Please enter device ID: ' DEVICE_ID
 echo
 
 # set the project and tell firebase to use it firebase
-gcloud config set project $GCP_ID
-gcloud config configurations activate $GCP_ID
+gcloud config set project $GOOGLE_CLOUD_PROJECT
 firebase use $GOOGLE_CLOUD_PROJECT
 
 # enable cloud functions, IoT core, and pub sub

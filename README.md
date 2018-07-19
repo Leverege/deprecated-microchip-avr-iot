@@ -36,17 +36,54 @@ Before getting started, you'll need to **create a GCP project and enable billing
 
 4. Click 'Add Firebase'
 
-## 3. Run the Quickstart Script
+## 3. Clone this repo in Cloud shell
 
-That's it for prerequisites! Click the button below to clone this repo into your project, and follow the Cloud Shell tutorials to complete your deployment. 
+1. Open Cloud Shell from your project
 
-[![Open this project in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Leverege/microchip-avr-iot&tutorial=tutorial.md)
-
-**If you have already completed part of this process and need to resume:**
-You can restart the tutorial by running:
+2. In the shell, run 
 
 ```bash
-teachme tutorial.md
+git clone https://github.com/Leverege/microchip-avr-iot.git
 ```
 
-in the Cloud Shell.
+## 4. Run the Quickstart Script
+
+1. In the Cloud Shell, run 
+
+```bash
+sh setup.sh
+```
+
+2. At the prompt, enter your AVR-IoT device's ID. You can find this by scanning the QR code on your device. 
+
+3. The setup script will run for several minutes
+    The setup script will:
+    * Enable Cloud Functions, IoT, and Pub Sub
+    * Create an IoT Core registry called AVR-IOT and register your device
+    * Install, build, and deploy Cloud Functions and the UI
+
+4. After the setup script completes, add your AVR-IoT device's public key to its entry in your IoT Core registry:
+
+    1. Make sure your device is connected to your computer via USB
+
+    2. Open your IoT Core registry management page, and select the AVR-IOT registry.
+
+        [OPEN IOT CORE REGISTRY MANAGEMENT](https://console.cloud.google.com/iot/registries)
+
+    3. Click on your device's ID in the list 
+
+        Because registry entries must beging with a letter **your device ID will be prefixed with a 'd'**. To search for you device by id, you must enter 'd<your_device_id>' in the search box.
+
+    4. Click the **Add public key** button
+
+        <img src="https://storage.googleapis.com/avr-iot-media/iotcore-addpub.png" height="70">
+
+    5. Select 'Upload' under the input method, and ES256 (**not** ES256_X509) as the public key format. Then click the **Browse** button.
+
+        <img src="https://storage.googleapis.com/avr-iot-media/iotcore-addauthkey.png" height="150">
+
+    6. In the upload window, navigate to the CURIOSITY drive, then select PUBKEY.TXT and upload it. 
+
+## View your live data!
+
+And that's it! Check out your new Firebase app to view the live data coming from your device. 
