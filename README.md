@@ -22,11 +22,11 @@ Before getting started, you'll need to **create a GCP project and enable billing
 
 2. Select 'Add project'
 
-![](https://storage.googleapis.com/avr-iot-media/fb-add.png | height=100)
+<img src="https://storage.googleapis.com/avr-iot-media/fb-add.png" heigh="150">
 
 3. In the Project Name field, select the GCP project you created or selected above
 
-![](https://storage.googleapis.com/avr-iot-media/fb-connect.png | height=150)
+<img src="https://storage.googleapis.com/avr-iot-media/fb-connect.png" height="150">
 
 4. Click 'Add Firebase'
 
