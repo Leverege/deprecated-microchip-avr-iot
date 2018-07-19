@@ -40,6 +40,13 @@ npm run build --prefix ./ui
 # retrieve UI config vars 
 firebase setup:web > config.txt
 node getFirebaseConfig.js config.txt
+
+# wait for ui/src/Config.js to be created
+while [ ! -f /ui/src/Config.js ]
+do 
+  sleep 5
+done
+
 chmod +x ./ui/src/Config.js
 
 firebase deploy --only functions:recordMessage
