@@ -3,7 +3,7 @@
     "rules": "database.rules.json"
   },
   "functions": {
-    "source": "cloud-functions/functions"
+    "source": "/functions"
   },
   "hosting": {
     "public": "ui/dist",
