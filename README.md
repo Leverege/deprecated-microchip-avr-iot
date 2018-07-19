@@ -63,28 +63,28 @@ sh setup.sh
     * Create an IoT Core registry called AVR-IOT and register your device
     * Install, build, and deploy Cloud Functions and the UI
 
-4. After the setup script completes, add your AVR-IoT device's public key to its entry in your IoT Core registry:
+## 5. Add your devices public key to your IoT Core Registry
 
-    1. Make sure your device is connected to your computer via USB
+1. Make sure your device is connected to your computer via USB
 
-    2. Open your IoT Core registry management page, and select the AVR-IOT registry.
+2. Open your IoT Core registry management page, and select the AVR-IOT registry.
 
-        [OPEN IOT CORE REGISTRY MANAGEMENT](https://console.cloud.google.com/iot/registries)
+    [OPEN IOT CORE REGISTRY MANAGEMENT](https://console.cloud.google.com/iot/registries)
 
-    3. Click on your device's ID in the list 
+3. Click on your device's ID in the list 
 
-        Because registry entries must beging with a letter **your device ID will be prefixed with a 'd'**. To search for you device by id, you must enter 'd<your_device_id>' in the search box.
+    Because registry entries must begin with a letter **your device ID will be prefixed with a 'd'**. To search for your device by id, you must enter 'd<your_device_id>' in the search box.
 
-    4. Click the **Add public key** button
+4. Click the **Add public key** button
 
-        <img src="https://storage.googleapis.com/avr-iot-media/iotcore-addpub.png" height="70">
+    <img src="https://storage.googleapis.com/avr-iot-media/iotcore-addpub.png" height="70">
 
-    5. Select 'Upload' under the input method, and ES256 (**not** ES256_X509) as the public key format. Then click the **Browse** button.
+5. Select 'Upload' under the input method, and ES256 (**not** ES256_X509) as the public key format. Then click the **Browse** button.
 
-        <img src="https://storage.googleapis.com/avr-iot-media/iotcore-addauthkey.png" height="150">
+    <img src="https://storage.googleapis.com/avr-iot-media/iotcore-addauthkey.png" height="150">
 
-    6. In the upload window, navigate to the CURIOSITY drive, then select PUBKEY.TXT and upload it. 
+6. In the upload window, navigate to the CURIOSITY drive, then select PUBKEY.TXT and upload it. 
 
 ## View your live data!
 
-And that's it! Check out your new Firebase app to view the live data coming from your device. 
+And that's it! Check out your new Firebase app at <your-project-id>.firebaseapp.com/device/<your-device-id> to view the live data coming from your device. 
