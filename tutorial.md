@@ -37,14 +37,16 @@ sh setup.sh
 
 You can find this by scanning the QR code on your device. 
 
-**The setup script will run for several minutes**
+### The setup script will run for several minutes
 
 The setup script will:
 * Enable Cloud Functions, IoT, and Pub Sub
 * Create an IoT Core registry called AVR-IOT and register your device
 * Install, build, and deploy Cloud Functions and the UI
 
-Once the setup script completes, click the **Continue** button below to see how to add your AVR-IoT device's public key to its entry in your IoT Core registry.
+### Once the setup script completes, click the Continue button below 
+
+After everything is deployed it's time to add your AVR-IoT device's public key to its entry in your IoT Core registry.
 
 ## Add the devices public key to the registry
 
@@ -66,11 +68,11 @@ Because registry entries must beging with a letter **your device ID will be pref
 
 4. Click the **Add public key** button
 
-![](https://storage.googleapis.com/avr-iot-media/iotcore-addpub.png)
+<img src="https://storage.googleapis.com/avr-iot-media/iotcore-addpub.png" height="150">
 
 5. Select 'Upload' under the input method, and ES256 (**not** ES256_X509) as the public key format. Then click the **Browse** button.
 
-![](https://storage.googleapis.com/avr-iot-media/iotcore-addauthkey.png)
+<img src="https://storage.googleapis.com/avr-iot-media/iotcore-addauthkey.png" height="150">
 
 6. In the upload window, navigate to the CURIOSITY drive, then select PUBKEY.TXT and upload it. 
 
