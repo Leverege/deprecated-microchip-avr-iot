@@ -68,7 +68,7 @@ Because registry entries must beging with a letter **your device ID will be pref
 
 4. Click the **Add public key** button
 
-<img src="https://storage.googleapis.com/avr-iot-media/iotcore-addpub.png" height="150">
+<img src="https://storage.googleapis.com/avr-iot-media/iotcore-addpub.png" height="70">
 
 5. Select 'Upload' under the input method, and ES256 (**not** ES256_X509) as the public key format. Then click the **Browse** button.
 
