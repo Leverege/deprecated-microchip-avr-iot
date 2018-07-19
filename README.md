@@ -42,6 +42,11 @@ Before getting started, you'll need to **create a GCP project and enable billing
 git clone https://github.com/Leverege/microchip-avr-iot.git
 ```
 
+3. cd into the microchip-avr-iot directory
+```bash
+cd microchip-avr-iot
+```
+
 ## 4. Run the Quickstart Script
 
 1. In the Cloud Shell, run 
