@@ -3,10 +3,10 @@
     "rules": "database.rules.json"
   },
   "functions": {
-    "source": "/functions"
+    "source": "./functions"
   },
   "hosting": {
-    "public": "ui/dist",
+    "public": "./ui/dist",
     "ignore": [
       "firebase.json",
       "**/.*",
