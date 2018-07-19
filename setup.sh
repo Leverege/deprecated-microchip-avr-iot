@@ -14,6 +14,7 @@ echo
 
 # set the project and tell firebase to use it firebase
 gcloud config set project $GCP_ID
+gcloud config configurations activate $GCP_ID
 firebase use $GOOGLE_CLOUD_PROJECT
 
 # enable cloud functions, IoT core, and pub sub
