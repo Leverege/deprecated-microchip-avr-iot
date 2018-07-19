@@ -35,3 +35,12 @@ Before getting started, you'll need to **create a GCP project and enable billing
 That's it for prerequisites! Click the button below to clone this repo into your project, and follow the Cloud Shell tutorials to complete your deployment. 
 
 [![Open this project in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Leverege/microchip-avr-iot&tutorial=tutorial.md)
+
+**If you have already completed part of this process and need to resume:**
+You can restart the tutorial by running:
+
+```bash
+teachme tutorial.md
+```
+
+in the Cloud Shell.
