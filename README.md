@@ -18,7 +18,7 @@ Before getting started, you'll need to **create a GCP project and enable billing
 
     Your project ID is not necessarily the same as your project name. It is typically your project name in all lowercase, with dashes instead of spaces. So a project named "Demo Project" might become "demo-project."
 
-    <img src="https://storage.googleapis.com/avr-iot-media/project-id.png" width="500">
+<img src="https://storage.googleapis.com/avr-iot-media/project-id.png" width="500">
 
 ## 2. Create a Firebase Project
 
