@@ -1,0 +1,45 @@
+@import '../../css/SiteTheme.less';
+
+.collapsible-section-header {
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  height: 24px;
+  width: 409px;
+  color: @almost-white;
+  font-family: @brand-font;
+  font-weight: 500;
+  font-size: 16px;
+
+  &:hover {
+    cursor: pointer;
+  } 
+}
+
+.collapsible-section-content {
+  transition: height .25s ease-in-out;
+  display: block;
+  height: auto;
+}
+
+.collapsible-section-header-icon {
+  text-align: center;
+  margin-right: 8px;
+  transition: .25s ease;
+  transition: transform .5s ease;
+  transform: rotate(-180deg);
+  width: 16px;
+  height: 16px;
+  line-height: 16px;  
+}
+
+.collapsible-section-header-icon.collapsed  {    
+  transform: rotate(0deg);
+}
+
+.collapsible-section-header:hover .collapsible-section-header-icon {
+  -webkit-box-shadow:  0px 0px 10px 2px rgba(255,255,255,0.6);
+  -moz-box-shadow:  0px 0px 10px 2px  rgba(255,255,255,0.6);
+  box-shadow:  0px 0px 10px 2px rgba(255,255,255,0.6);
+  border-radius: 50%;
+}

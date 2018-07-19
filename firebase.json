@@ -1,0 +1,16 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "functions": {
+    "source": "cloud-functions/functions"
+  },
+  "hosting": {
+    "public": "ui/dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

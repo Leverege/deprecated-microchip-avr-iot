@@ -1,0 +1,43 @@
+@import "../../css/SiteTheme.less";
+
+.graphs {
+  background-color: rgba(216,216,216,0.2);
+}
+
+.graphs-loading {
+  box-sizing: border-box;
+  width: 370px;
+  height: 255px;
+  padding: 100px 0 0 160px; 
+}
+
+.graphs-wrapper {
+  display: flex;
+  width: @content-width;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+}
+
+.graphs-left {
+  margin-right: 32px;
+}
+
+@media screen and (max-width: 915px) {
+  .graphs-wrapper {
+    width: 100%;
+    max-width: @content-width;
+    flex-wrap: wrap;
+  }
+
+  .graphs-loading {
+    width: 70%;
+  }
+
+  .graph {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px; 
+  }
+}

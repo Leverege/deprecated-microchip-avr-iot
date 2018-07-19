@@ -1,0 +1,44 @@
+@import "../../css/SiteTheme.less";
+
+.btn {
+  box-sizing: border-box;
+  padding: 10px 28px;
+  font-family: @button-font;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 16px;
+  text-align: center;
+  box-shadow: @small-drop-shadow;   
+  border-radius: 2px;
+  text-decoration: none;
+  border: none;
+  
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.02);
+      -webkit-transition-duration: .25s;
+      -moz-transition-duration: .25s;
+      -o-transition-duration: .25s;
+    transition-duration: .25s;
+  }
+}
+
+.btn--red {
+    background-color: @brand-primary-color;
+    color: #FFFFFF;
+}
+
+.btn--gray {
+    background-color: #7A7A7A;
+    color: #FFFFFF
+}
+
+.btn--blue {
+  background-color: @bright-blue;
+  color: #fff
+}
+
+.btn.flat {
+  box-shadow: none;
+}

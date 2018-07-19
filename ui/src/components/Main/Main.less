@@ -1,0 +1,105 @@
+@import '../../css/SiteTheme.less';
+
+// what's next section
+.next {
+  background-color: rgba(216,216,216,0.2);
+  padding-bottom: 32px;
+}
+
+.next-tile-text {
+  margin-bottom: 32px;
+}
+
+.next-wrapper {
+  display: flex;
+  width: @content-width;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.next-tile {
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+}
+
+.next-tile.half {
+  width: 432px;
+}
+
+.next-tile.full {
+  width: @content-width;
+  display: flex;
+  padding-bottom: 40px;
+  justify-content: space-between;
+}
+
+.next-tile-full-image-wrapper {
+  width: 420px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-tile-full-image-wrapper img {
+  height: 123px;;
+}
+
+.next-tile-full-content {
+  width: 352px;
+}
+
+.next-remove-device {
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  margin: 0 0px 29px 0;
+  padding: 0;
+  color: @brand-primary-color;
+}
+
+.next-remove-device-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+  width: 900px;
+}
+
+@media screen and (max-width: 915px) {
+  .next-wrapper {
+    width: 100%;
+  }
+
+  .next-tile.half,
+  .next-tile.full {
+    width: 100%;
+    max-width: @content-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .next-tile.full {
+    flex-wrap: wrap;
+  }
+
+  .next-tile-full-content {
+    width: 100%;
+  }
+
+  .next-tile-full-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .next-tile-full-image-wrapper {
+    width: 100%;
+  }
+
+  .next-tile-full-image-wrapper img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

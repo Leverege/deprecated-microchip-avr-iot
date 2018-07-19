@@ -1,0 +1,75 @@
+@import "../../css/SiteTheme.less";
+
+.status-strip {
+    width: 896px;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 915px) {
+  .status-strip {
+    width: 100%;
+  }
+}
+.status-strip img {
+  z-index: 2;
+}
+
+.status-strip .line {
+  position: absolute;
+  width: 88%;
+  height: 72px;
+  z-index: 0;
+  padding: 0px 20px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 450px ) {
+  .status-strip .line {
+    width: 80%;
+  }
+}
+
+.status-strip .line > * {
+  position: absolute;
+  top: 0;
+}
+
+.status-strip .line .white {
+  width: 100%;
+  height: 53%;
+  border-bottom: 4px solid #FFF;
+  z-index: 0;
+}
+
+.status-strip .line .blue {
+  transition: 1s ease-in;
+  height: 53%;
+  border-bottom: 4px solid @bright-blue;
+  z-index: 0;
+}
+
+@media screen and (max-width: 350px) {
+  .status-strip .line .white,
+  .status-strip .line .blue {
+    height: 43%;
+  }
+}
+
+.status-strip .line .blue.one {
+  width: 33%;
+}
+
+.status-strip .line .blue.two {
+  width: 66%;
+}
+
+.status-strip .line .blue.three {
+  width: 100%;
+}
+

@@ -1,0 +1,23 @@
+@import '../../css/SiteTheme.less';
+
+.site-footer {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 40px 64px 48px 64px;
+  justify-content: space-between;
+  background-color: @site-background;
+  width: 100%;
+}
+
+.site-footer-content {
+  display: flex;
+}
+
+@media screen and (max-width: 915px) {
+  .site-footer {
+    padding: 40px 20px;
+  }
+  .site-footer-content {
+    flex-wrap: wrap;
+  }
+}

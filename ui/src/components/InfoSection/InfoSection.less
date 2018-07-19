@@ -1,0 +1,32 @@
+@import "../../css/SiteTheme.less";
+
+.info-section {
+    padding: 64px;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.info-section-header {
+    height: 24px;
+    color: @almost-black;
+    font-family: @brand-font;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    width: @content-width;
+    margin: 0 auto 24px auto;
+}
+
+@media screen and (max-width: 915px) {
+    .info-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .info-section-header {
+        width: 100%;
+        max-width: @content-width;
+        margin-bottom: 20px;
+    }
+}

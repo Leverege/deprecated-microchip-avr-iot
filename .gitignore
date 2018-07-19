@@ -1,0 +1,15 @@
+# node_modules
+ui/node_modules/
+cloud-functions/node_modules
+cloud-functions/functions/node_modules
+
+# build files
+ui/build
+ui/dist
+ui/image
+
+# auto-generated config files
+config.txt
+
+# secrets
+cloud-functions/serviceAccount.json
