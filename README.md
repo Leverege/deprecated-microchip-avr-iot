@@ -8,17 +8,17 @@ Before getting started, you'll need to **create a GCP project and enable billing
 
 1. Create (or select an existing) GCP project
 
-    [GO TO THE MANAGE RESOURCES PAGE](https://console.cloud.google.com/cloud-resource-manager)
+    <a href="https://console.cloud.google.com/cloud-resource-manager" target="_blank">GO TO THE MANAGE RESOURCES PAGE</a>
 
 2. Enable billing for the project
 
-    [LEARN HOW TO ENABLE BILLING](https://cloud.google.com/billing/docs/how-to/modify-project)
+    <a href="https://cloud.google.com/billing/docs/how-to/modify-project" target="_blank">LEARN HOW TO ENABLE BILLING</a>
 
 ## 2. Create a Firebase Project
 
 1. Launch the Firebase Console
 
-    [GO TO FIREBASE CONSOLE](https://console.firebase.google.com/u/0/)
+    <a href="https://console.firebase.google.com/u/0/" target="_blank">GO TO FIREBASE CONSOLE</a>
 
 2. Select 'Add project'
 
@@ -69,7 +69,7 @@ sh setup.sh
 
 2. Open your IoT Core registry management page, and select the AVR-IOT registry.
 
-    [OPEN IOT CORE REGISTRY MANAGEMENT](https://console.cloud.google.com/iot/registries)
+    <a href="https://console.cloud.google.com/iot/registries" target="_blank">OPEN IOT CORE REGISTRY MANAGEMENT</a>
 
 3. Click on your device's ID in the list 
 
