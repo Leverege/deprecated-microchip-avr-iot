@@ -3,8 +3,8 @@ CLOUD_REGION=us-central1
 
 # color variables
 red=$'\e[1;31m'
-grn=$'\e[1;32m'
-blu=$'\e[1;34m'
+green=$'\e[1;32m'
+blue=$'\e[1;34m'
 mag=$'\e[1;35m'
 cyn=$'\e[1;36m'
 white=$'\e[0m'
@@ -18,7 +18,7 @@ echo $blue "*********************************************" $white
 
 # get device name, project name and device public key from user
 echo
-read -p 'Please enter device ID: ' DEVICE_ID
+read -p 'Please enter device ID: ' RAW_DEVICE_ID
 echo
 
 # set the project and tell firebase to use it firebase
