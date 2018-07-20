@@ -7,6 +7,10 @@
   },
   "hosting": {
     "public": "./ui/dist",
+    "rewrites": [ {
+      "source": "**",
+      "destination": "/index.html"
+    } ],
     "ignore": [
       "firebase.json",
       "**/.*",

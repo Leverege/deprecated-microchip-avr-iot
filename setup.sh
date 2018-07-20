@@ -48,8 +48,10 @@ firebase deploy --only hosting
 
 echo
 echo **************************************
+echo
 echo Setup complete! Don\'t forget to add your device\'s public key in the registry: https://console.cloud.google.com/iot/registries
 echo
 echo Once you\'ve added the public key, checkout your app at $GOOGLE_CLOUD_PROJECT.firebaseapp.com
+echo
 echo **************************************
 echo
