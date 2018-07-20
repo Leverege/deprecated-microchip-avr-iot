@@ -8,6 +8,8 @@ Before getting started, you'll need to **create a GCP project and enable billing
 
 1. Create (or select an existing) GCP project.
 
+    (Note: Links will open in this window. Shift+click, command+click, or middle mouse click to open in new window or tab.)
+
     <a href="https://console.cloud.google.com/cloud-resource-manager" target="_blank">GO TO THE MANAGE RESOURCES PAGE</a>
 
 2. Enable billing for the project.
