@@ -13,11 +13,8 @@ echo $'\e[1;34m'"***********************************************"
 
 # get device name, project name and device public key from user
 echo 
-read -p 'Please enter device ID: ' RAW_DEVICE_ID
+read -p 'Please enter device ID: ' DEVICE_ID
 echo
-
-# trim whitespace from device id input
-DEVICE_ID="$(echo -e "${RAW_DEVICE_ID}" | tr -d '[:space:]')"
 
 # set the project and tell firebase to use it firebase
 gcloud config set project $GOOGLE_CLOUD_PROJECT
