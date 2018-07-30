@@ -14,4 +14,3 @@ export const TOGGLE_CONFIG_DOWNLOADED = 'TOGGLE_CONFIG_DOWNLOADED';
 export const toggleConfigDownloaded = () => ({
   type: TOGGLE_CONFIG_DOWNLOADED
 })
-

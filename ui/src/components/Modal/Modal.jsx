@@ -63,7 +63,7 @@ export class Modal extends React.Component {
           {this.renderText( modalType )}
           <div className='modal-buttons'>
             <button id='modal-cancel' autoFocus className='cancel' onClick={ this.toggleModal }>Cancel</button>
-            { modalType === 'graduate' ? <Button id='modal-confirm' onClick={ () => console.log('remove device') } style={ { padding: '8px 28px' } } type='button' text="Graduate"/> : '' }
+            { modalType === 'graduate' ? <Button id='modal-confirm' href="https://github.com/Leverege/microchip-avr-iot/" style={ { padding: '8px 28px' } } text="Graduate"/> : '' }
           </div>
         </TileInset>
       </section>

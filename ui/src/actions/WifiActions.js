@@ -1,3 +1,5 @@
+export const MAX_SSID_LENGTH = 20
+
 export function downloadWifiConfig ( ssid, pw, networkType ) {
     const element = document.createElement('a');
     const body = `CMD:SEND_UART=wifi ${ssid},${pw},${networkType}\n\n`;

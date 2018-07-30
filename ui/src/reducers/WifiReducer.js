@@ -2,7 +2,8 @@ import {
   VALIDATE_AND_SET_FIELD,
   TOGGLE_PW_VIS,
   NETWORK_TYPE_CHANGE,
-  SET_WIFI_FORM_ERROR 
+  SET_WIFI_FORM_ERROR,
+  MAX_SSID_LENGTH 
 } from '../actions/WifiActions';
 
 const initialState = {
@@ -20,8 +21,8 @@ export default function WifiReducer ( state = initialState, action ) {
     case VALIDATE_AND_SET_FIELD: {
       const { field, value } = action.fieldData;
       let error = null;
-      if ( value.length > 15 ) {
-        error = { field: field, 'msg': `${ field === 'ssid' ? 'SSID' : 'Password' } must be less than 16 characters` }
+      if ( value.length > MAX_SSID_LENGTH ) {
+        error = { field: field, 'msg': `${ field === 'ssid' ? 'SSID' : 'Password' } must be less than ${MAX_SSID_LENGTH + 1} characters` }
       }
       if ( error || ( state.error && state.error.field === field ) ) {
         return { ...state, wifiForm: { ...state.wifiForm, [field]: value, error } }

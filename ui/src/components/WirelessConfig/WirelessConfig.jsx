@@ -16,6 +16,16 @@ export class WirelessConfig extends React.Component {
     this.state = {    }
   }
 
+  componentDidMount() {
+    document.getElementById('setup-video').play()
+  }
+
+  componentDidUpdate = () => {
+    if (this.props.configDownloaded) {
+      setTimeout( document.getElementById('connectedVideo').play(), 500 )
+    }
+  }
+
   handleRetryClick = () => {
     this.props.dispatch( toggleConfigDownloaded() )
   }
@@ -34,8 +44,13 @@ export class WirelessConfig extends React.Component {
     if ( configDownloaded ) {
       inset = (
         <div>
-          <p className='wireless-config-instructions'>Drag your wifi.config file onto your device. If WiFi connection is successful, you should see your blue LED light up on the device.</p>
-          <div>[placeholder for image]</div>
+          <p className='wireless-config-instructions'>Download (or drag and drop) your wifi.config file onto your device. If WiFi connection is successful, you should see your blue LED light up on the device.</p>
+          <div className='wireless-config-connected-video'>
+            <video loop autoplay muted id="connectedVideo">
+              <source src="https://storage.googleapis.com/avr-iot-media/avr-iot_wifi_connected.mp4"/>
+            </video>
+          </div>
+          <p className='wireless-config-instructions'>Once you see a steady blue light, click Confirm to attempt to make a connection. Click Retry to enter your Wifi information and generate a new config file.</p>
           <div className="wireless-config-buttons">
             <Button className='wireless-config-btn' text={'Retry'} type='button' onClick={ this.handleRetryClick } color={'gray'}/>
             <Button className='wireless-config-btn' text={'Confirm'} type='button' onClick={ this.handleConfirmConnection } />
@@ -62,7 +77,7 @@ export class WirelessConfig extends React.Component {
             <h4 className="wireless-config-instruction-header">Setup Instructions</h4>
             <div className="wireless-config-instructions">
               <video id="setup-video" controls loop>
-                <source src="https://storage.googleapis.com/avr-iot.com/images/setup.mp4" type="video/mp4"/>
+                <source src="https://storage.googleapis.com/avr-iot-media/setup.mp4" type="video/mp4"/>
               </video>
             </div>
           </div>

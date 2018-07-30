@@ -117,7 +117,22 @@
   max-width: 420px;
 }
 
+.wireless-config-connected-video {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+#connectedVideo {
+  width: 100%;
+}
+
+// !guide wrapper hidden, awating content
+.wireless-config-guide-wrapper {
+  display: none;
+  height: 0;
+  overflow: hidden;
+}
 
 @media screen and (max-width: 915px) {
   .wireless-config {
@@ -161,11 +176,12 @@
     width: 100%;
   }
 
-  .content-wrapper.wireless-config-guide-wrapper {
-    max-width: 464px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  // !hidden, pending content
+  // .content-wrapper.wireless-config-guide-wrapper {
+  //   max-width: 464px;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
 }
 
 @media screen and (max-width: 500px) {

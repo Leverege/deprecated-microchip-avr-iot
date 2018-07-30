@@ -31,7 +31,8 @@
     "test": "mocha ./test",
     "lint": "esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",
-    "analyze": "plato -r -d report -e .eslintrc src"
+    "analyze": "plato -r -d report -e .eslintrc src",
+    "gcs-deploy": "gcs-deploy"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
@@ -62,6 +63,7 @@
     "eslint-watch": "^3.1.3",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
+    "gcs-deploy": "git+ssh://git@bitbucket-leverege:leverege/gcs-deploy.git",
     "less": "^2.7.3",
     "less-loader": "^4.0.4",
     "mocha": "^5.1.1",

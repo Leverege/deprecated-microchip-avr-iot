@@ -4,22 +4,21 @@ import Input from 'muicss/lib/react/input';
 import RadioButton from '../RadioButton/RadioButton';
 import Button from '../Button/Button';
 import { toggleConfigDownloaded } from '../../actions/UIActions';
-import { validateAndSetField, togglePwVis, networkTypeChange, setWifiFormError, downloadWifiConfig } from '../../actions/WifiActions';
+import { validateAndSubmit, validateAndSetField, togglePwVis, networkTypeChange, setWifiFormError, downloadWifiConfig, MAX_SSID_LENGTH } from '../../actions/WifiActions';
 import './WifiForm.less';
 
 export class WifiForm extends React.Component {
 
   handleWifiSubmit = () => {
     const { ssid, pw, networkType } = this.props.form;
-    // validate
     if ( !ssid ) {
       this.props.dispatch( setWifiFormError( { field: 'ssid', msg: 'SSID is required' } ) )
     } else if ( !pw && networkType !== '1' ) {
       this.props.dispatch( setWifiFormError( { field: 'pw', msg: 'Password is required' } ) )
-    } else if ( ssid.length > 15 ) {
-      this.props.dispatch( setWifiFormError( { field: 'ssid', 'msg': 'SSID must be less than 16 characters' } ) )
-    } else if ( pw.length > 15 ) {
-      this.props.dispatch( setWifiFormError( { field: 'pw', 'msg': 'Password must be less than 16 characters' } ) )
+    } else if ( ssid.length > MAX_SSID_LENGTH ) {
+      this.props.dispatch( setWifiFormError( { field: 'ssid', 'msg': `SSID must be less than ${MAX_SSID_LENGTH + 1} characters` } ) )
+    } else if ( pw.length > MAX_SSID_LENGTH ) {
+      this.props.dispatch( setWifiFormError( { field: 'pw', 'msg': `Password must be less than ${MAX_SSID_LENGTH + 1} characters` } ) )
     } else {
       // valid form, submit
       this.props.dispatch(toggleConfigDownloaded())
@@ -63,6 +62,7 @@ export class WifiForm extends React.Component {
     <div className='wifi-form'>
       { errorMsg }
       <Input required={true} invalid={ error && error.field === 'ssid' } placeholder='Wireless Network Name' value={ ssid } onChange={ e => this.handleSSIDChange( e.target.value ) }/>
+      <p><em>Your WiFi information is not transmitted anywhere&mdash;the config file is generated in your browser.</em></p>
       <fieldset>
         <legend className='wifi-form-label'>
           Network Type

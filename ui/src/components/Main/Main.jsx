@@ -54,7 +54,7 @@ class Main extends React.Component {
   render () {
     return (
       <main>
-        <WelcomePane/>
+        <WelcomePane hideInset={true} />
         <SlideDown className={'my-dropdown-slidedown'}>
           { this.renderSecondaryContent() }
         </SlideDown>

@@ -1,0 +1,91 @@
+@import "../../css/SiteTheme.less";
+
+.welcome-right  {
+  box-sizing: border-box;
+  position: relative;
+  width: 384px;
+  height: 328px;
+  border-radius: 2px;
+  border: 1px solid @brand-primary-color;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.5);
+  padding: 34px 32px 33px 33px;
+  flex-grow: 0;
+}
+
+.welcome-right-title {
+  margin: 0;
+  margin-bottom: 16px;
+  color: @almost-black;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: bold;
+  font-family: @brand-font;
+}
+
+.welcome-right-list {
+  color: @almost-black;    
+  line-height: 17px;
+}
+
+.welcome-right-list-item {
+  display: flex;
+  opacity: 0;
+  align-items: center;
+  margin-bottom: 16px;
+  transition: 2s ease;
+}
+
+.welcome-right-list-item-text {
+  margin-left: 12px;
+  font-size: 14px;
+}
+
+.welcome-right-list-item-number {
+  background-color: @bright-blue;
+  height: 24px;
+  width: 24px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 24px;
+  flex-shrink: 0;
+  text-align: center;
+  color: #FFF;
+  border-radius: 50%;
+}
+
+.welcome-right-secondary-header {
+  margin: 24px 0 14px;
+  color: @almost-black;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.welcome-right-bottom {
+  opacity: 0;
+  transition: .5s ease-in;
+}
+
+.welcome-right-bottom img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70px;
+}
+
+@media screen and (max-width: 350px) {
+  .welcome-right {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 915px) {
+  .welcome-right {
+    width: 100%;
+    max-width: 384px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+}
