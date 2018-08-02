@@ -31,8 +31,7 @@
     "test": "mocha ./test",
     "lint": "esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",
-    "analyze": "plato -r -d report -e .eslintrc src",
-    "gcs-deploy": "gcs-deploy"
+    "analyze": "plato -r -d report -e .eslintrc src"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
