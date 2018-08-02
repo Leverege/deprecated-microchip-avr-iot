@@ -57,9 +57,17 @@ cd microchip-avr-iot
 sh setup.sh
 ```
 
-2. At the prompt, enter your AVR-IoT device's ID. You can find this by scanning the QR code on your device. 
+2. At the prompt, enter your AVR-IoT device's UID. Your device's UID is the last portion of the url when launch CLICK-ME.HTM from the device. 
 
-3. The setup script will run for several minutes.
+    <img src="https://storage.googleapis.com/avr-iot-media/device_uid.png" height="30">
+
+3. If you would like to customize your IOT Core registry name, you may do so at this prompt.
+
+    IoT core registry names must start with a letter, use only letters, numbers, hyphens, and the following characters:
+
+        + . % _ ~
+
+4. The setup script will run for several minutes.
     The setup script will:
     * Enable Cloud Functions, IoT, and Pub Sub
     * Create an IoT Core registry called AVR-IOT and register your device
