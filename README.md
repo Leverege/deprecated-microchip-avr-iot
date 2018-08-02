@@ -52,7 +52,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
     <img src="https://storage.googleapis.com/avr-iot-media/device_uid.png" height="30">
 
-2. If you would like to customize your IOT Core registry name, you may do so at this prompt.
+2. If you would like to customize your IOT Core registry name, you may do so at the IoT core registry name prompt.
 
     IoT core registry names must start with a letter, use only letters, numbers, hyphens, and the following characters:
 
