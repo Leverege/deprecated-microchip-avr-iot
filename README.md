@@ -41,33 +41,24 @@ Before getting started, you'll need to **create a GCP project and enable billing
 2. In the shell, run 
 
 ```bash
-git clone https://github.com/Leverege/microchip-avr-iot.git
+git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-iot && bash setup.sh
 ```
 
-3. cd into the microchip-avr-iot directory.
-```bash
-cd microchip-avr-iot
-```
+   to clone this repo, enter the newly created directory, and run the quickstart script.
 
 ## 4. Run the Quickstart Script
 
-1. In the Cloud Shell, run 
-
-```bash
-sh setup.sh
-```
-
-2. At the prompt, enter your AVR-IoT device's UID. Your device's UID is the last portion of the url when launch CLICK-ME.HTM from the device. 
+1. At the prompt, enter your AVR-IoT device's UID. Your device's UID is the last portion of the url when launch CLICK-ME.HTM from the device. 
 
     <img src="https://storage.googleapis.com/avr-iot-media/device_uid.png" height="30">
 
-3. If you would like to customize your IOT Core registry name, you may do so at this prompt.
+2. If you would like to customize your IOT Core registry name, you may do so at this prompt.
 
     IoT core registry names must start with a letter, use only letters, numbers, hyphens, and the following characters:
 
         + . % _ ~
 
-4. The setup script will run for several minutes.
+3. The setup script will run for several minutes.
     The setup script will:
     * Enable Cloud Functions, IoT, and Pub Sub
     * Create an IoT Core registry called AVR-IOT and register your device
