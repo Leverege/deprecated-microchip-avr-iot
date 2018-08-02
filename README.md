@@ -1,6 +1,6 @@
 # AVR-IoT Quick Start
 
-This repository contains the tutorials and files needed to connect your AVR-IoT device to your own Google Project and deploy a site to Firebase. Once you've completed the tutorial, you'll be all set to view your live data.
+This repository contains the tutorials and files needed to connect your AVR-IoT device to your own Google Project and deploy a site to Firebase. Once you've completed the tutorial, you'll be all set to view your live data. (COMING SOON. Live data will be available pending release of Microchip MPExpress. Currently we support only creating and deploying an IoT Core registry, Cloud Functions, and the UI.)
 
 Before getting started, you'll need to **create a GCP project and enable billing**, and **create a Firebase project and link it to your GCP project**.
 
@@ -90,4 +90,4 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
 ## View your live data!
 
-And that's it! Check out your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-id\> to view the live data coming from your device. 
+And that's it! Check out your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-id\> to view the live data (COMING SOON) from your device. 
