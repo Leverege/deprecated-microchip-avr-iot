@@ -14,8 +14,36 @@ printf "***********************************************${NC}\n\n"
 
 # get device name, project name and device public key from user
 echo 
-read -p 'Please enter device ID: ' DEVICE_ID
+read -p 'Please enter device UID: ' DEVICE_ID
 echo
+
+# let user choose to set IoT core registry name
+REG_NAME=""
+ATTEMPT=0
+# check that REG_NAME matches pattern
+while ! [[ $REG_NAME =~ ^[a-zA-Z]{1}[a-zA-Z0-9+%~._-]{2,254} ]]
+do
+
+# display hint if user has made 1 or more attempt
+if (( ATTEMPT > 0 )); then
+printf "\n${RED}IoT Core Registry names must be between 3-255 characters,\nstart with a letter, and contain only letters, numbers and\n the following characters:\n"
+echo '- . % ~ +'
+echo
+printf "${NC}"
+fi 
+
+# get user REG_NAME input
+read -p 'Choose an IoT Core registry name (return for AVR-IOT): ' REG_NAME
+ATTEMPT=$((ATTEMPT + 1))
+
+# set to default if no text entered
+if [ "$REG_NAME" = "" ]; then
+  REG_NAME="AVR-IOT"
+fi
+
+# strip white space
+REG_NAME="$(echo "${REG_NAME}" | tr -d '[:space:]')"
+done
 
 # set the project and tell firebase to use it firebase
 gcloud config set project $GOOGLE_CLOUD_PROJECT
@@ -31,7 +59,8 @@ gcloud pubsub topics create avr-iot
 gcloud iot registries create AVR-IOT --region=$CLOUD_REGION --event-notification-config=topic=avr-iot
 
 # add device to registry
-gcloud iot devices create "d$DEVICE_ID" --region=$CLOUD_REGION --registry=AVR-IOT
+printf "\n${BLU}Creating IoT core registry ${REG_NAME}${NC}"
+gcloud iot devices create "d$DEVICE_ID" --region=$CLOUD_REGION --registry=$REG_NAME
 
 #install npm dependencies
 printf "${BLU}Installing Cloud Function dependencies (this may take a few minutes)...\n${NC}" 
