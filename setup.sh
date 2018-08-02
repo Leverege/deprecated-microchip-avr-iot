@@ -56,7 +56,7 @@ gcloud services enable cloudfunctions.googleapis.com cloudiot.googleapis.com pub
 gcloud pubsub topics create avr-iot
 
 # create IoT core device registry
-gcloud iot registries create AVR-IOT --region=$CLOUD_REGION --event-notification-config=topic=avr-iot
+gcloud iot registries create $REG_NAME --region=$CLOUD_REGION --event-notification-config=topic=avr-iot
 
 # add device to registry
 printf "\n${BLU}Creating IoT core registry ${REG_NAME}${NC}"
