@@ -84,9 +84,9 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
     <a href="https://console.cloud.google.com/iot/registries" target="_blank">OPEN IOT CORE REGISTRY MANAGEMENT</a>
 
-3. Click on your device's ID in the list.
+3. Click on your device's UID in the list.
 
-    Because registry entries must begin with a letter **your device ID will be prefixed with a 'd'**. To search for your device by id, you must enter 'd<your_device_id>' in the search box.
+    Because registry entries must begin with a letter **your device UID will be prefixed with a 'd'**. To search for your device by uid, you must enter 'd<your_device_id>' in the search box.
 
 4. Click the **Add public key** button.
 
@@ -102,4 +102,4 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
 ## View your live data!
 
-And that's it! If you've edited your device with the Microchip editor, you should see live data flowing to your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-id\>. 
+And that's it! If you've edited your device with the Microchip editor, you should see live data flowing to your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-uid\>. 
