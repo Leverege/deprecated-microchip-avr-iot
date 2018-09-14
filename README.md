@@ -14,7 +14,7 @@ Following this guide, you will clone this repo into your Google Cloud project, a
 
 After running the quickstart script, you'll need to add your device's secure pubkey to the device's entry in your IoT core registry. 
 
-## 1. Create a GCP and Firebase Projects
+## 1. Set up your GCP and Firebase Projects
 
 The quickstart requires that you have a Firebase project connected to a GCP project will billing enabled.
 
