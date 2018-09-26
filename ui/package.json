@@ -1,7 +1,7 @@
 {
   "name": "microchip-ui",
-  "version": "0.1.1",
-  "private": false,
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "better-react-spinkit": "^2.0.4",
     "copy-webpack-plugin": "^4.5.1",
@@ -32,7 +32,8 @@
     "test": "mocha ./test",
     "lint": "esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",
-    "analyze": "plato -r -d report -e .eslintrc src"
+    "analyze": "plato -r -d report -e .eslintrc src",
+    "gcs-deploy": "gcs-deploy"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",

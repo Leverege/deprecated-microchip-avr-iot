@@ -9,14 +9,16 @@ export function NumericalGraph( props ) {
   function toNull() { return '' }
 
   const dataVals = [] // array of values for dataset, used to normalize domain
-  const yDomain = normalizeDomain( dataVals, 1 ) // rounds y-axis labels to one decimal place
-
+  
   // create array of objects with just relevant datapoint and time
   const formattedData = deviceData.map( ( datapoint ) => {
+    
     dataVals.push( datapoint[dataType] )
     return { time : new Date( datapoint.time ), [dataType] : parseToPrecision( datapoint[dataType], 4 ) }
   } )
-
+  
+  const yDomain = normalizeDomain( dataVals, 1 ) // rounds y-axis labels to one decimal place
+  
   return (
     <VictoryChart padding={{ top : 0, left : 50, bottom : 55, right : 25 }}>
       <VictoryAxis label="Time (s)" tickFormat={toNull} />
@@ -32,4 +34,8 @@ export function NumericalGraph( props ) {
         interpolation="monotoneX" />
     </VictoryChart>
   )
+}
+
+export function BooleanGraph( props ) {
+  return <div />
 }
