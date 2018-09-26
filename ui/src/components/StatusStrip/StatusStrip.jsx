@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { animationComplete } from '../../actions/UIActions';
 import './StatusStrip.less';
-import StatusIndicator from "../StatusIndicator/StatusIndicator";
+import StatusIndicator from '../StatusIndicator/StatusIndicator';
 
-export class StatusStrip extends React.Component {
+class StatusStrip extends React.Component {
 
   componentDidUpdate() {
     // stagger line animation between indicator animations
@@ -13,7 +13,7 @@ export class StatusStrip extends React.Component {
     }    
   }
 
-  render () {    
+  render() {    
     const { deviceConnected, connectedToFirebase, establishingFirebaseConnection, deviceSpecified, lineLength } = this.props;
     const deviceLive = deviceConnected && deviceSpecified;
     let lineFillLength;
@@ -28,30 +28,30 @@ export class StatusStrip extends React.Component {
     return (      
       <div className="status-strip">
         <div className="line">
-          <div className="white"/>
-          <div className={ `blue ${ lineFillLength }` }/>
+          <div className="white" />
+          <div className={`blue ${lineFillLength}`} />
         </div>
-        <StatusIndicator statusType={ 'device' } animation='ping' connected={ deviceLive }/>
+        <StatusIndicator statusType="device" animation="ping" connected={deviceLive} />
         <StatusIndicator 
-          statusType={ 'wifi' } 
-          hold={ establishingFirebaseConnection ? true : false }
-          animation={ establishingFirebaseConnection ? 'heartbeat' : 'ping'} 
-          connected={ connectedToFirebase }/>
-        <StatusIndicator statusType={ 'iot' } animation='ping' connected={ connectedToFirebase }/>
-        <StatusIndicator statusType={ 'firebase' } animation='heartbeat' connected={ connectedToFirebase }/>
+          statusType="wifi" 
+          hold={!!establishingFirebaseConnection}
+          animation={establishingFirebaseConnection ? 'heartbeat' : 'ping'} 
+          connected={connectedToFirebase} />
+        <StatusIndicator statusType="iot" animation="ping" connected={connectedToFirebase} />
+        <StatusIndicator statusType="firebase" animation="heartbeat" connected={connectedToFirebase} />
       </div>
     )
   }
 }
 
-const mapStateToProps = state => ({
-  deviceSpecified: !!state.DeviceReducer.deviceSN,
-  deviceConnected: state.DeviceReducer.deviceConnected,
-  connectedToFirebase: state.DeviceReducer.connectedToFirebase,
-  establishingFirebaseConnection: state.DeviceReducer.establishingFirebaseConnection,
-  animationQueue: state.UIReducer.animationQueue,
-  lineLength: state.UIReducer.lineLength,
-  currentAnimation: state.UIReducer.currentAnimation
-});
+const mapStateToProps = state => ( {
+  deviceSpecified : !!state.DeviceReducer.deviceSN,
+  deviceConnected : state.DeviceReducer.deviceConnected,
+  connectedToFirebase : state.DeviceReducer.connectedToFirebase,
+  establishingFirebaseConnection : state.DeviceReducer.establishingFirebaseConnection,
+  animationQueue : state.UIReducer.animationQueue,
+  lineLength : state.UIReducer.lineLength,
+  currentAnimation : state.UIReducer.currentAnimation
+} );
 
-export default connect(mapStateToProps)(StatusStrip)
+export default connect( mapStateToProps )( StatusStrip )

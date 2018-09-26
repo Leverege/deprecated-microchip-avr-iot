@@ -1,21 +1,20 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import {SlideDown} from 'react-slidedown'
+import React from 'react'
+import { connect } from 'react-redux'
+import { SlideDown } from 'react-slidedown'
 import 'react-slidedown/lib/slidedown.css'
-import WelcomePane from '../WelcomePane/WelcomePane';
-import WirelessConfig from '../WirelessConfig/WirelessConfig';
-import GraphSection from '../GraphSection/GraphSection';
-import Button from '../Button/Button';
-import WhatsNext from './WhatsNext';
-import Overview from './Overview';
+import WelcomePane from '../WelcomePane/WelcomePane'
+import WirelessConfig from '../WirelessConfig/WirelessConfig'
+import GraphSection from '../GraphSection/GraphSection'
+import WhatsNext from './WhatsNext'
+import Overview from './Overview'
 import { 
   setDeviceSn, 
   getFirebaseData, 
   getDeviceDataError,
   MAX_DATA_AGE,
-} from '../../actions/DeviceActions';
+} from '../../actions/DeviceActions'
 
-import './Main.less';
+import './Main.less'
 
 class Main extends React.Component {
   componentDidMount() {
@@ -31,10 +30,11 @@ class Main extends React.Component {
 
   tick = () => {
     // dispatch data connection error & stop countdown if data age exceeds max
-    const nextSecond = 1000 - Date.now() % 1000
-    this.timer = setTimeout(this.tick, nextSecond);
-    const timeExceeded = ( Date.now() - this.props.lastUpdate ) / 1000 > MAX_DATA_AGE;
-    if ( this.props.connectedToFirebase &&  timeExceeded ) {
+    const estServerTime = this.props.offset ? new Date().getTime() + this.props.offset : Date.now()
+    const nextSecond = 1000 - ( estServerTime % 1000 )
+    this.timer = setTimeout( this.tick, nextSecond );
+    const timeExceeded = ( estServerTime - this.props.lastUpdate ) / 1000 > MAX_DATA_AGE;
+    if ( this.props.connectedToFirebase && timeExceeded ) {
       this.props.dispatch( getDeviceDataError() );
     }
   }
@@ -43,19 +43,19 @@ class Main extends React.Component {
     if ( !this.props.establishingFirebaseConnection && this.props.deviceConnected && !!this.props.deviceSN ) {
       if ( this.props.connectedToFirebase ) {
         // all systems go - render graphs & marketing info
-        return [(<GraphSection/>), (<Overview/>),(<WhatsNext/>)]
-      } else {
-        // failed to get fresh data from firebase - request manual wifi info
-        return <WirelessConfig/>
-      }      
+        return [ ( <GraphSection /> ), ( <Overview /> ), ( <WhatsNext /> ) ]
+      } 
+      // failed to get fresh data from firebase - request manual wifi info
+      return <WirelessConfig />
     }
+    return null // linter demands a return
   }
 
-  render () {
+  render() {
     return (
       <main>
-        <WelcomePane hideInset={true} />
-        <SlideDown className={'my-dropdown-slidedown'}>
+        <WelcomePane hideInset />
+        <SlideDown className="my-dropdown-slidedown">
           { this.renderSecondaryContent() }
         </SlideDown>
       </main>
@@ -64,12 +64,13 @@ class Main extends React.Component {
 
 }
 
-const mapStateToProps = state => ({
-  deviceSN: state.DeviceReducer.deviceSN,
-  deviceConnected: state.DeviceReducer.deviceConnected,
-  establishingFirebaseConnection: state.DeviceReducer.establishingFirebaseConnection,
-  connectedToFirebase: state.DeviceReducer.connectedToFirebase,
-  lastUpdate: state.DeviceReducer.lastUpdate
-})
+const mapStateToProps = state => ( {
+  deviceSN : state.DeviceReducer.deviceSN,
+  deviceConnected : state.DeviceReducer.deviceConnected,
+  establishingFirebaseConnection : state.DeviceReducer.establishingFirebaseConnection,
+  connectedToFirebase : state.DeviceReducer.connectedToFirebase,
+  lastUpdate : state.DeviceReducer.lastUpdate,
+  offset : state.DeviceReducer.offset
+} )
 
-export default connect(mapStateToProps)(Main)
+export default connect( mapStateToProps )( Main )

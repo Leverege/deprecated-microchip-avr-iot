@@ -12,42 +12,43 @@ import './app.less'
 import Overview from './components/Main/Overview';
 
 class App extends Component {
-  constructor (props) {
-    super(props);
+  constructor( props ) {
+    super( props );
     this.state = {
-      showShadow: false
+      showShadow : false
     }
   }
 
   componentDidMount() {
-    const contentSection = document.getElementById('App-content');
-    contentSection.addEventListener('scroll', this.handleScroll);
-  };
+    const contentSection = document.getElementById( 'App-content' );
+    contentSection.addEventListener( 'scroll', this.handleScroll );
+  }
 
   handleScroll = () => {
-    const contentSection = document.getElementById('App-content');
-    this.setState({ showShadow: contentSection.scrollTop > 0 })
+    const contentSection = document.getElementById( 'App-content' );
+    this.setState( { showShadow : contentSection.scrollTop > 0 } )
   }
 
   renderModal = () => {
     if ( this.props.showModal ) {
       return <Modal />
     }
+    return null
   }
 
   render() {
     return (
       <Router>
-        <div className='App'>
+        <div className="App">
           {this.renderModal()}
-          <TopNavBar showShadow={this.state.showShadow}/>
-          <div id='App-content'>          
+          <TopNavBar showShadow={this.state.showShadow} />
+          <div id="App-content">          
             <Switch>
-              <Route exact path='/device/:uid' component={ Main } />
-              <Route component={ WelcomePane } />            
+              <Route exact path="/device/:uid" component={Main} />
+              <Route component={WelcomePane} />            
             </Switch>
-            <Route exact path='/' component={ Overview }/>
-            <Footer/>
+            <Route exact path="/" component={Overview} />
+            <Footer />
           </div>          
         </div>
       </Router>
@@ -55,10 +56,10 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ( state ) => ({
-  establishingFirebaseConnection: state.DeviceReducer.establishingFirebaseConnection,
-  connectedToFirebase: state.DeviceReducer.connectedToFirebase,
-  showModal: state.UIReducer.showModal
-})
+const mapStateToProps = state => ( {
+  establishingFirebaseConnection : state.DeviceReducer.establishingFirebaseConnection,
+  connectedToFirebase : state.DeviceReducer.connectedToFirebase,
+  showModal : state.UIReducer.showModal
+} )
 
-export default connect(mapStateToProps)(App);
+export default connect( mapStateToProps )( App );

@@ -1,90 +1,61 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import TileInset from '../TileInset/TileInset';
-import InfoSection from '../InfoSection/InfoSection';
-import { VictoryChart, VictoryLine, VictoryAxis } from 'victory';
-import { ThreeBounce } from 'better-react-spinkit';
-import { parseToPrecision, normalizeDomain } from '../../utils/utils';
+import React from 'react'
+import { connect } from 'react-redux'
+import { VictoryChart, VictoryLine, VictoryAxis } from 'victory'
+import { ThreeBounce } from 'better-react-spinkit'
+import TileInset from '../TileInset/TileInset'
+import InfoSection from '../InfoSection/InfoSection'
+import { NumericalGraph } from '../graph/Graph';
 
 import './GraphSection.less';
 
 class GraphSection extends React.Component {
 
-  renderGraphs( deviceData ) {
+  renderGraphs( deviceData, loading ) {
     // return array of graphs, with one graph for each non-time data type in device data
     const graphs = [];
     // get array of non-time keys in data
-    const dataTypes = Object.keys(deviceData[0]).filter(key => key !== 'time')
+    const dataTypes = Object.keys( deviceData[0] ).filter( key => key !== 'time' )
 
     // create graph for each dataType
-    dataTypes.forEach( dataType => {
-      const dataVals = []; // array of values for this datapoint
-      // create array of objects with just relevant datapoint and time
-      const formattedData = deviceData.map( ( datapoint ) => {
-        dataVals.push( datapoint[dataType] )
-        return { time : new Date( datapoint.time ), [dataType] : parseToPrecision( datapoint[dataType], 4) }
-      })
+    dataTypes.forEach( ( dataType, index ) => {
+      let graphData
+      const position = index % 2 === 0 ? 'left' : 'right'
 
-      const yDomain = normalizeDomain ( dataVals, 1 );
-
-      function toString( y ) { return `${y}`}
-      function toNull() { return '' }
-
+      // if data not loaded, display loading animation instead of chart
+      if ( loading ) {
+        graphData = <div className="graphs-loading"><ThreeBounce size={13} color="#4285F4" /></div>
+      } else {
+        graphData = <NumericalGraph dataType={dataType} deviceData={deviceData} />
+      }
       const graph = (
-        <VictoryChart padding={{ top : 0, left : 50, bottom : 55, right : 25 }}>
-          <VictoryAxis label="Time (s)" tickFormat={toNull} />
-          <VictoryAxis 
-            dependentAxis 
-            domain={ { y: yDomain } }
-            tickFormat={toString}
-          />
-          <VictoryLine 
-            data={formattedData} 
-            x="time"
-            y={dataType}
-            style={{ data : { stroke : '#4285F4' } }}
-            interpolation="cardinal"
-          />
-        </VictoryChart>
+        <TileInset title={dataType} className={`graph graphs-${position}`}>
+          { graphData }
+        </TileInset>
       )
-      graphs.push(graph)
+      graphs.push( graph )
 
     } )
     return graphs
   }
 
   render() {
-    const { deviceSN, deviceData, firebaseAnimationComplete } = this.props;
-    let leftChart, rightChart;
-    const charts = this.renderGraphs( deviceData );
-
-    if ( !firebaseAnimationComplete ) {
-      // show loading animation while status indicators still animating
-      leftChart = rightChart = <div className="graphs-loading"><ThreeBounce size={13} color="#4285F4" /></div>
-    } else {
-      leftChart = charts[0];
-      rightChart = charts[1];
-    }
+    const { deviceSN, deviceData, firebaseAnimationComplete } = this.props
+    const charts = this.renderGraphs( deviceData, !firebaseAnimationComplete )
 
     return (
-      <InfoSection className="graphs" title={`Device UID: ${deviceSN}`}>	
+      <InfoSection className="graphs" title={`Device UID: ${deviceSN}`}>
         <div className="graphs-wrapper">
-          <TileInset title="Light" className="graph graphs-left">
-            { leftChart }
-          </TileInset>
-          <TileInset title="Temperature" className="graph graphs-right">
-            { rightChart }
-          </TileInset>
+          { charts }
         </div>
       </InfoSection>
     )
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => ( {
   deviceData : state.DeviceReducer.deviceData,
   firebaseAnimationComplete : state.UIReducer.animationComplete.firebase,
   deviceSN : state.DeviceReducer.deviceSN
-})
+} )
 
 export default connect( mapStateToProps )( GraphSection )

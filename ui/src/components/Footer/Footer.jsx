@@ -7,7 +7,7 @@ import './Footer.less';
 
 class Footer extends React.Component {
   handleUnavailable = () => {
-    this.props.dispatch( toggleModal('unavailable') )
+    this.props.dispatch( toggleModal( 'unavailable' ) )
   }
   render() {
     return (
@@ -23,7 +23,7 @@ class Footer extends React.Component {
             <li><a href="#" onClick={this.handleUnavailable}>Schematic and Gerbers (complete)</a></li>
           </FooterLinks>
           <FooterLinks header="Rapid Development Tools">
-            <li><a href="https://microchip.com/start" target="_blank">AVR START</a></li>
+            <li><a href="https://start.atmel.com/" target="_blank">AVR START</a></li>
             <li><a href="https://microchip.com/mcc" target="_blank">MPLAB Code Configurator</a></li>
             <li><a href="#" onClick={this.handleUnavailable}>White Papers</a></li>
             <li><a href="#" onClick={this.handleUnavailable}>Books</a></li>
@@ -48,4 +48,4 @@ class Footer extends React.Component {
   }
 }
 
-export default connect()(Footer)
+export default connect()( Footer )
