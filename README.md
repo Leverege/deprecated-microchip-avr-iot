@@ -1,14 +1,26 @@
+(Links will open in this window. Shift+click, command+click, or middle mouse click to open in new window or tab.)
+
 # AVR-IoT Quick Start
 
-This repository contains the tutorials and files needed to connect your AVR-IoT device to your own Google Project and deploy a site to Firebase. Once you've completed the tutorial, you'll be all set to view your live data.
+This repository contains resources for quickly connecting your [AVR-IoT device](https://avr-iot.com/) to your own Google Project and deploying a live UI to Firebase. It assumes **you have already configured your device with Microchip's AVR START rapid development tool** (coming soon). 
 
-Before getting started, you'll need to **create a GCP project and enable billing**, and **create a Firebase project and link it to your GCP project**.
+Following this guide, you will clone this repo into your Google Cloud project, and run a script that:
+* enables [Cloud Functions](https://cloud.google.com/functions/docs/), [Cloud IoT Core](https://cloud.google.com/iot-core/), and [Pub/Sub](https://cloud.google.com/pubsub/), 
+* creates an `avr-iot` Pub/Sub topic,
+* creates an IoT registry (default name: `AVR-IOT`, configurable in the script),
+* adds your device's UID to the registry,
+* builds and deploys a Cloud Function to route Pub/Sub messages to your [Firebase project](https://firebase.google.com/), and
+* builds and deploys a UI to firebase.
 
-## 1. Create a GCP Project
+After running the quickstart script, you'll need to add your device's secure pubkey to the device's entry in your IoT core registry. 
 
-1. Create (or select an existing) GCP project.
+## 1. Set up your GCP and Firebase Projects
 
-    (Note: Links will open in this window. Shift+click, command+click, or middle mouse click to open in new window or tab.)
+The quickstart requires that you have a Firebase project connected to a GCP project will billing enabled.
+
+### GCP Project
+
+1. Create (or select an existing) GCP project.    
 
     <a href="https://console.cloud.google.com/cloud-resource-manager" target="_blank">GO TO THE MANAGE RESOURCES PAGE</a>
 
@@ -16,7 +28,7 @@ Before getting started, you'll need to **create a GCP project and enable billing
 
     <a href="https://cloud.google.com/billing/docs/how-to/modify-project" target="_blank">LEARN HOW TO ENABLE BILLING</a>
 
-## 2. Create a Firebase Project
+### Firebase Project
 
 1. Launch the Firebase Console.
 
@@ -32,7 +44,7 @@ Before getting started, you'll need to **create a GCP project and enable billing
 
 4. Click 'Add Firebase'.
 
-## 3. Clone this repo in Cloud shell
+## 2. Clone this repo in Cloud shell
 
 1. Open Cloud Shell from your project.
 
@@ -46,9 +58,9 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
    to clone this repo, enter the newly created directory, and run the quickstart script.
 
-## 4. Run the Quickstart Script
+## 3. Run the Quickstart Script
 
-1. At the prompt, enter your AVR-IoT device's UID. Your device's UID is the last portion of the url when launch CLICK-ME.HTM from the device. 
+1. At the prompt, enter your AVR-IoT device's UID. Your device's UID is the last portion of the url you see after launching CLICK-ME.HTM from the device. 
 
     <img src="https://storage.googleapis.com/avr-iot-media/device_uid.png" height="30">
 
@@ -64,7 +76,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     * Create an IoT Core registry called AVR-IOT and register your device
     * Install, build, and deploy Cloud Functions and the UI
 
-## 5. Add your devices public key to your IoT Core Registry
+## 4. Add your devices public key to your IoT Core Registry
 
 1. Make sure your device is connected to your computer via USB.
 
@@ -72,9 +84,9 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
     <a href="https://console.cloud.google.com/iot/registries" target="_blank">OPEN IOT CORE REGISTRY MANAGEMENT</a>
 
-3. Click on your device's ID in the list.
+3. Click on your device's UID in the list.
 
-    Because registry entries must begin with a letter **your device ID will be prefixed with a 'd'**. To search for your device by id, you must enter 'd<your_device_id>' in the search box.
+    Because registry entries must begin with a letter **your device UID will be prefixed with a 'd'**. To search for your device by uid, you must enter 'd<your_device_id>' in the search box.
 
 4. Click the **Add public key** button.
 
@@ -90,4 +102,4 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
 ## View your live data!
 
-And that's it! Check out your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-id\> to view the live data coming from your device. 
+And that's it! If you've edited your device with the AVR START rapid development tool, you should see live data flowing to your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-uid\>. 
