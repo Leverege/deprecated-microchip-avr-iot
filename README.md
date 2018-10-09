@@ -1,8 +1,23 @@
+<p align="center">
+    <a href="https://www.microchip.com/">
+        <img src="https://storage.googleapis.com/avr-iot-media/microchip_round_logo.png" alt="Microchip logo" width=72 height=72 />
+    </a>
+    <h3 align="center">AVR-IoT Quick Start</h3>
+    <p align="center">
+        A rapid deployment tool for getting your AVR-IoT data on the cloud. Powered by Leverege.
+        <br>
+        <a href="https://www.leverege.com/contact-us"><strong>Talk to an Expert »</strong></a>
+        <br>
+        <br>
+        <a href="">
+    </p>
+</p>
+
 (Links will open in this window. Shift+click, command+click, or middle mouse click to open in new window or tab.)
 
 # AVR-IoT Quick Start
 
-This repository contains resources for quickly connecting your [AVR-IoT device](https://avr-iot.com/) to your own Google Project and deploying a live UI to Firebase. It assumes **you have already configured your device with Microchip's AVR START rapid development tool** (coming soon). 
+This repository contains resources for quickly connecting your [AVR-IoT device](https://avr-iot.com/) to your own Google Project and deploying a live UI to Firebase. It assumes **you have already configured your device with Microchip's Atmel START rapid development tool**. 
 
 Following this guide, you will clone this repo into your Google Cloud project, and run a script that:
 * enables [Cloud Functions](https://cloud.google.com/functions/docs/), [Cloud IoT Core](https://cloud.google.com/iot-core/), and [Pub/Sub](https://cloud.google.com/pubsub/), 
@@ -12,7 +27,8 @@ Following this guide, you will clone this repo into your Google Cloud project, a
 * builds and deploys a Cloud Function to route Pub/Sub messages to your [Firebase project](https://firebase.google.com/), and
 * builds and deploys a UI to firebase.
 
-After running the quickstart script, you'll need to add your device's secure pubkey to the device's entry in your IoT core registry. 
+After running the quick
+script, you'll need to add your device's secure pubkey to the device's entry in your IoT core registry. 
 
 ## 1. Set up your GCP and Firebase Projects
 
@@ -102,4 +118,4 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
 ## View your live data!
 
-And that's it! If you've edited your device with the AVR START rapid development tool, you should see live data flowing to your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-uid\>. 
+And that's it! If you've edited your device with the Atmel START rapid development tool, you should see live data flowing to your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-uid\>. 
