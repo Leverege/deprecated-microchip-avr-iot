@@ -117,7 +117,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
 ## 5. Update your AVR-IoT device firmware
 
-1. Navigate to http://start.atmel.com/
+1. Navigate to <a href="http://start.atmel.com/" target="_blank">Atmel START</a>
 
 2. Click the **Browse Example** button. 
 
