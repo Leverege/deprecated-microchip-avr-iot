@@ -24,7 +24,7 @@
 1. [Set up your GCP and Firebase Projects](#set-up-your-gcp-and-firebase-projects)
 2. [Clone this repo in Cloud shell](#clone-this-repo-in-cloud-shell)
 3. [Run the Quickstart Script](#run-the-quickstart-script)
-4. [Add your devices public key to your IoT Core Registry](#add-your-devices-public-key-to-your-iot-core-registry)
+4. [Add your device's public key to your IoT Core Registry](#add-your-device's-public-key-to-your-iot-core-registry)
 5. [Update your AVR-IoT device firmware](#update-your-avr-iot-device-firmware)
 
 
@@ -103,7 +103,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     * Create an IoT Core registry called AVR-IOT and register your device
     * Install, build, and deploy Cloud Functions and the UI
 
-## Add your devices public key to your IoT Core Registry
+## Add your device's public key to your IoT Core Registry
 
 1. Make sure your device is connected to your computer via USB.
 
