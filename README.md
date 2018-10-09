@@ -170,6 +170,6 @@ And that's it! If you've edited your device with the Atmel START rapid developme
 </p>
 
 <p align="center"> 
-        Want to build something bigger? We can help you scale your projects into solutions. [Talk to an IoT expert.](https://www.leverege.com/contact-us) 
+        Want to build something bigger? We can help you scale your projects into solutions. <a href="https://www.leverege.com/contact-us"><strong>Talk to an IoT expert.</strong></a>
 </p>
 
