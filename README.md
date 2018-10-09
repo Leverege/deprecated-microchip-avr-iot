@@ -27,6 +27,7 @@
 4. [Add your devices public key to your IoT Core Registry](#add-your-device-public-key-to-your-iot-core-registry)
 5. [Update your AVR-IoT device firmware](#update-your-avr-iot-device-firmware)
 
+##
 
 This repository contains resources for quickly connecting your [AVR-IoT device](https://avr-iot.com/) to your own Google Project and deploying a live UI to Firebase.
 
