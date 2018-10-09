@@ -20,8 +20,13 @@
 
 (Links will open in this window. Shift+click, command+click, or middle mouse click to open in new window or tab.)
 
-##Table of Contents
-- [1. Set up your GCP and Firebase Projects](#1.-Set-up-your-GCP-and-Firebase-Projects)
+## Table of Contents
+1. [Set up your GCP and Firebase Projects](#1.-Set-up-your-GCP-and-Firebase-Projects)
+2. asdf
+3. asdf
+4. asdf
+5. asdf
+
 
 This repository contains resources for quickly connecting your [AVR-IoT device](https://avr-iot.com/) to your own Google Project and deploying a live UI to Firebase.
 
