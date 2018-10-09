@@ -172,4 +172,6 @@ And that's it! If you've edited your device with the Atmel START rapid developme
 <p align="center"> 
         Want to build something bigger? We can help you scale your projects into solutions. <a href="https://www.leverege.com/contact-us"><strong>Talk to an IoT expert.</strong></a>
 </p>
-
+<p align="center"> 
+   <img src="https://storage.googleapis.com/avr-iot-media/lvg-logo-wide.png" height="25">
+    </p>
