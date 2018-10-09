@@ -145,7 +145,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
 5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID.
 
-    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-cloudconfig.png" height="300">
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-cloudconfig.png" height="225">
     
 6. Switch to the **Export Project** tab and click on **Download Pack**.
 
