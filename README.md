@@ -149,7 +149,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
    By default, it will be located in ..\Atmel_Studio\7.0\\<YourProjectName\>\\<YourProjectName\>\Debug 
    
-   <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/Atmel-build-solution.png" height="150">
+   <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/Atmel-build-solution.png" height="225">
 
 8. Drag and drop the .hex project file into your CURIOSITY drive.
 
