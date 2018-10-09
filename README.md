@@ -2,6 +2,12 @@
     <a href="https://www.microchip.com/">
         <img src="https://storage.googleapis.com/avr-iot-media/microchip_round_logo.png" alt="Microchip logo" width=72 height=72 />
     </a>
+    <a href="https://cloud.google.com/">
+        <img src="https://storage.googleapis.com/avr-iot-media/cloud-logo.png" alt="GCP Logo" width=72 height=72 />
+    </a>
+    <a href="https://www.leverege.com">
+        <img src="https://storage.googleapis.com/avr-iot-media/lvg-logo.png" alt="Leverege logo" width=72 height=72 />
+    </a>
     <h3 align="center">AVR-IoT Quick Start</h3>
     <p align="center">
         A rapid deployment tool for getting your AVR-IoT data on the cloud. Powered by Leverege.
@@ -117,7 +123,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
 ## 5. Update your AVR-IoT device firmware
 
-1. Navigate to <a href="http://start.atmel.com/" target="_blank">Atmel START</a>. 
+1. Navigate to the <a href="http://start.atmel.com/" target="_blank">Atmel START Rapid Development Tool</a>. 
 
 2. Click the **Browse Example** button. 
     
