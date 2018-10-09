@@ -22,10 +22,10 @@
 
 ## Table of Contents
 1. [Set up your GCP and Firebase Projects](#set-up-your-gcp-and-firebase-projects)
-2. asdf
-3. asdf
-4. asdf
-5. asdf
+2. [Clone this repo in Cloud shell](#clone-this-repo-in-cloud-shell)
+3. [Run the Quickstart Script](#run-the-quickstart-script)
+4. [Add your devices public key to your IoT Core Registry](#add-your-devices-public-key-to-your-iot-core-registry)
+5. [Update your AVR-IoT device firmware](#update-your-avr-iot-device-firmware)
 
 
 This repository contains resources for quickly connecting your [AVR-IoT device](https://avr-iot.com/) to your own Google Project and deploying a live UI to Firebase.
@@ -71,7 +71,7 @@ The quickstart requires that you have a Firebase project connected to a GCP proj
 
 4. Click 'Add Firebase'.
 
-## 2. Clone this repo in Cloud shell
+## Clone this repo in Cloud shell
 
 1. Open Cloud Shell from your project.
 
@@ -85,7 +85,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
    to clone this repo, enter the newly created directory, and run the quickstart script.
 
-## 3. Run the Quickstart Script
+## Run the Quickstart Script
 
 1. At the prompt, enter your AVR-IoT device's UID. Your device's UID is the last portion of the url you see after launching CLICK-ME.HTM from the device. 
 
@@ -103,7 +103,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     * Create an IoT Core registry called AVR-IOT and register your device
     * Install, build, and deploy Cloud Functions and the UI
 
-## 4. Add your devices public key to your IoT Core Registry
+## Add your devices public key to your IoT Core Registry
 
 1. Make sure your device is connected to your computer via USB.
 
@@ -127,7 +127,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
     <img src="https://storage.googleapis.com/avr-iot-media/iotcore-click-add.png" height="150">
     
-## 5. Update your AVR-IoT device firmware
+## Update your AVR-IoT device firmware
 
 1. Navigate to the <a href="http://start.atmel.com/" target="_blank">Atmel START Rapid Development Tool</a>. 
 
