@@ -144,6 +144,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 6. Switch to the **Export Project** tab and click on **Download Pack**.
 
 7. Open the .atzip file in Atmel Studio and select **Build Solution** under the Build menu bar (or hit F7). Atmel Studio will generate a .hex file in the folder where you saved your project. 
+
 By default, it will be located in ..\Atmel_Studio\7.0\\<YourProjectName\>\\<YourProjectName\>\Debug 
 
 8. Drag and drop the .hex project file into your CURIOSITY drive.
