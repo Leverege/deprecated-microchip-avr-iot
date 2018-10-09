@@ -21,7 +21,7 @@
 (Links will open in this window. Shift+click, command+click, or middle mouse click to open in new window or tab.)
 
 ## Table of Contents
-1. [Set up your GCP and Firebase Projects](#1.-set-up-your-gcp-and-firebase-projects)
+1. [Set up your GCP and Firebase Projects](#set-up-your-gcp-and-firebase-projects)
 2. asdf
 3. asdf
 4. asdf
@@ -41,7 +41,7 @@ Following this guide, you will clone this repo into your Google Cloud project, a
 After running the quick
 script, you'll need to add your device's secure pubkey to the device's entry in your IoT core registry and update the firmware on your device using Atmel START and Atmel Studio. 
 
-## 1. Set up your GCP and Firebase Projects
+## Set up your GCP and Firebase Projects
 
 The quickstart requires that you have a Firebase project connected to a GCP project will billing enabled.
 
