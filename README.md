@@ -22,7 +22,7 @@
 
 # AVR-IoT Quick Start
 
-This repository contains resources for quickly connecting your [AVR-IoT device](https://avr-iot.com/) to your own Google Project and deploying a live UI to Firebase. It assumes **you have already configured your device with Microchip's Atmel START rapid development tool**. 
+This repository contains resources for quickly connecting your [AVR-IoT device](https://avr-iot.com/) to your own Google Project and deploying a live UI to Firebase.
 
 Following this guide, you will clone this repo into your Google Cloud project, and run a script that:
 * enables [Cloud Functions](https://cloud.google.com/functions/docs/), [Cloud IoT Core](https://cloud.google.com/iot-core/), and [Pub/Sub](https://cloud.google.com/pubsub/), 
