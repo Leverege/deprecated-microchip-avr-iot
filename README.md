@@ -135,7 +135,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
 4. Click on **Open Example**.
     
-    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-open-example.png" height="150">
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-open-example.png" height="75">
     
 5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID.
 
