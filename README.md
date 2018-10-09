@@ -164,5 +164,6 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
 And that's it! If you've edited your device with the Atmel START rapid development tool, you should see live data flowing to your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-uid\>. 
 
+##
 
 Want to build something bigger? We can help you scale your projects into solutions. [Talk to an IoT expert.](https://www.leverege.com/contact-us) 
