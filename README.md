@@ -139,11 +139,11 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
 5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID.
 
-    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-cloudconfig.png" height="150">
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-cloudconfig.png" height="300">
     
 6. Switch to the **Export Project** tab and click on **Download Pack**.
 
-    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-export-dl.png" height="150">
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-export-dl.png" height="300">
 
 7. Open the .atzip file in Atmel Studio and select **Build Solution** under the Build menu bar (or hit F7). Atmel Studio will generate a .hex file in the folder where you saved your project. 
 
