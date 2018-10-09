@@ -25,9 +25,9 @@ export default function Footer( props ) {
           <li><a href="https://www.leverege.com/casestudy/manheim" target="_blank">Auction Fleet Management</a></li>
         </FooterLinks>
         <FooterLinks header="More Resources">
-          <li><a href="http://www.microchip.com/design-centers/wireless-connectivity/low-power-wide-area-networks" target="_blank">LoRa Solutions</a></li>
           <li><a href="https://www.leverege.com/iot-resources" target="blank">Blog</a></li>
           <li><a href="https://www.leverege.com/research-papers" target="blank">Research</a></li>
+          <li><a href="https://www.leverege.com/videos" target="_blank">Videos</a></li>
           <li><a href="https://www.leverege.com/iot-intro-ebook" target="_blank">IoT eBook</a></li>
         </FooterLinks>
       </ContentWrapper>
