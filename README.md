@@ -1,8 +1,35 @@
+<p align="center">
+    <a href="https://www.microchip.com/">
+        <img src="https://storage.googleapis.com/avr-iot-media/microchip_round_logo.png" alt="Microchip logo" width=72 height=72 />
+    </a>
+    <a href="https://cloud.google.com/">
+        <img src="https://storage.googleapis.com/avr-iot-media/cloud-logo.png" alt="GCP Logo" width=91 height=72 />
+    </a>
+    <a href="https://www.leverege.com">
+        <img src="https://storage.googleapis.com/avr-iot-media/lvg-logo.png" alt="Leverege logo" width=72 height=72 />
+    </a>
+    <h2 align="center">AVR-IoT Quick Start</h2>
+    <p align="center">
+        A rapid deployment tool for getting your AVR-IoT data on the cloud. Powered by Leverege.
+        <br>
+        <a href="https://www.leverege.com/contact-us"><strong>Talk to an Expert »</strong></a>
+        <br>
+        <br>
+    </p>
+</p>
+
 (Links will open in this window. Shift+click, command+click, or middle mouse click to open in new window or tab.)
 
-# AVR-IoT Quick Start
+## Table of Contents
+1. [Set up your GCP and Firebase Projects](#set-up-your-gcp-and-firebase-projects)
+2. [Clone this repo in Cloud shell](#clone-this-repo-in-cloud-shell)
+3. [Run the Quickstart Script](#run-the-quickstart-script)
+4. [Add your devices public key to your IoT Core Registry](#add-your-device-public-key-to-your-iot-core-registry)
+5. [Update your AVR-IoT device firmware](#update-your-avr-iot-device-firmware)
 
-This repository contains resources for quickly connecting your [AVR-IoT device](https://avr-iot.com/) to your own Google Project and deploying a live UI to Firebase. It assumes **you have already configured your device with Microchip's AVR START rapid development tool** (coming soon). 
+##
+
+This repository contains resources for quickly connecting your [AVR-IoT device](https://avr-iot.com/) to your own Google Project and deploying a live UI to Firebase.
 
 Following this guide, you will clone this repo into your Google Cloud project, and run a script that:
 * enables [Cloud Functions](https://cloud.google.com/functions/docs/), [Cloud IoT Core](https://cloud.google.com/iot-core/), and [Pub/Sub](https://cloud.google.com/pubsub/), 
@@ -12,9 +39,10 @@ Following this guide, you will clone this repo into your Google Cloud project, a
 * builds and deploys a Cloud Function to route Pub/Sub messages to your [Firebase project](https://firebase.google.com/), and
 * builds and deploys a UI to firebase.
 
-After running the quickstart script, you'll need to add your device's secure pubkey to the device's entry in your IoT core registry. 
+After running the quick
+script, you'll need to add your device's secure pubkey to the device's entry in your IoT core registry and update the firmware on your device using Atmel START and Atmel Studio. 
 
-## 1. Set up your GCP and Firebase Projects
+## Set up your GCP and Firebase Projects
 
 The quickstart requires that you have a Firebase project connected to a GCP project will billing enabled.
 
@@ -44,7 +72,7 @@ The quickstart requires that you have a Firebase project connected to a GCP proj
 
 4. Click 'Add Firebase'.
 
-## 2. Clone this repo in Cloud shell
+## Clone this repo in Cloud shell
 
 1. Open Cloud Shell from your project.
 
@@ -58,7 +86,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
    to clone this repo, enter the newly created directory, and run the quickstart script.
 
-## 3. Run the Quickstart Script
+## Run the Quickstart Script
 
 1. At the prompt, enter your AVR-IoT device's UID. Your device's UID is the last portion of the url you see after launching CLICK-ME.HTM from the device. 
 
@@ -76,7 +104,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     * Create an IoT Core registry called AVR-IOT and register your device
     * Install, build, and deploy Cloud Functions and the UI
 
-## 4. Add your devices public key to your IoT Core Registry
+## Add your device public key to your IoT Core Registry
 
 1. Make sure your device is connected to your computer via USB.
 
@@ -99,7 +127,43 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 6. In the upload window, navigate to the CURIOSITY drive, then select PUBKEY.TXT and click add to upload it. 
     
     <img src="https://storage.googleapis.com/avr-iot-media/iotcore-click-add.png" height="150">
+    
+## Update your AVR-IoT device firmware
+
+1. Navigate to the <a href="http://start.atmel.com/" target="_blank">Atmel START Rapid Development Tool</a>. 
+
+2. Click the **Browse Example** button. 
+    
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/Atmel-START-browse.png" height="150">
+    
+3. Search for **ATMEGA4808** and select **AVR IoT WG Sensor Node**.
+
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-search.png" height="150">
+    
+4. Click on **Open Example**.
+    
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-open-example.png" height="75">
+    
+5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID.
+
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-cloudconfig.png" height="225">
+    
+6. Switch to the **Export Project** tab and click on **Download Pack**.
+
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-export-dl.png" height="300">
+
+7. Open the .atzip file in Atmel Studio and select **Build Solution** under the Build menu bar (or hit F7). Atmel Studio will generate a .hex file in the folder where you saved your project. 
+   
+   <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/Atmel-build-solution.png" height="225">
+
+   By default, it will be located in ..\Atmel_Studio\7.0\\<YourProjectName\>\\<YourProjectName\>\Debug 
+
+8. Drag and drop the .hex project file into your CURIOSITY drive.
 
 ## View your live data!
 
-And that's it! If you've edited your device with the AVR START rapid development tool, you should see live data flowing to your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-uid\>. 
+And that's it! If you've edited your device with the Atmel START rapid development tool, you should see live data flowing to your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-uid\>. 
+
+##
+
+Want to build something bigger? We can help you scale your projects into solutions. [Talk to an IoT expert.](https://www.leverege.com/contact-us) 
