@@ -45,6 +45,7 @@ fi
 REG_NAME="$(echo "${REG_NAME}" | tr -d '[:space:]')"
 done
 
+
 # set the project and tell firebase to use it firebase
 gcloud config set project $GOOGLE_CLOUD_PROJECT
 firebase use $GOOGLE_CLOUD_PROJECT
@@ -70,7 +71,7 @@ npm install --prefix ./ui/
 
 # retrieve UI config vars 
 firebase setup:web > config.txt
-node getFirebaseConfig.js config.txt
+node getFirebaseConfig.js $DEVICE_ID config.txt
 
 # build UI
 printf "${BLU}Creating a production build of the UI (this may take a few minutes)...\n${NC}"
