@@ -130,7 +130,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
 ## Update your AVR-IoT device firmware
 
-1. Navigate to the <a href="http://start.atmel.com/" target="_blank">Atmel START Rapid Development Tool</a>. 
+1. Navigate to the <a href="http://start.atmel.com/" target="_blank">Atmel START Rapid Development Tool</a>. Please note that this software is Windows only. 
 
 2. Click the **Browse Example** button. 
     
@@ -144,7 +144,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
     <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-open-example.png" height="75">
     
-5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID.
+5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID. Under the WLAN Configuration section, enter in your WiFi credentials. Note: the network **mus** be 2.4Ghz as the device cannot connect to 5.0 Ghz networks. 
 
     <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-cloudconfig.png" height="225">
     
@@ -165,5 +165,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 And that's it! If you've edited your device with the Atmel START rapid development tool, you should see live data flowing to your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-uid\>. 
 
 ##
+
+Whether you're a Fortune 500 company or startup, transforming your current business or creating entirely new businesses, it takes a team with deep experience across verticals and use cases to turn your IoT prototype into an IoT product.
 
 Want to build something bigger? We can help you scale your projects into solutions. [Talk to an IoT expert.](https://www.leverege.com/contact-us) 
