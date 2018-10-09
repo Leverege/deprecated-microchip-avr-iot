@@ -31,7 +31,7 @@ Following this guide, you will clone this repo into your Google Cloud project, a
 * builds and deploys a UI to firebase.
 
 After running the quick
-script, you'll need to add your device's secure pubkey to the device's entry in your IoT core registry. 
+script, you'll need to add your device's secure pubkey to the device's entry in your IoT core registry and update the firmware on your device using Atmel START and Atmel Studio. 
 
 ## 1. Set up your GCP and Firebase Projects
 
