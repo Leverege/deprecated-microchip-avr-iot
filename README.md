@@ -153,13 +153,16 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-export-dl.png" height="300">
 
 7. Open the .atzip file in Atmel Studio and select **Build Solution** under the Build menu bar (or hit F7). Atmel Studio will generate a .hex file in the folder where you saved your project. 
-
-   By default, it will be located in ..\Atmel_Studio\7.0\\<YourProjectName\>\\<YourProjectName\>\Debug 
    
    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/Atmel-build-solution.png" height="225">
+
+   By default, it will be located in ..\Atmel_Studio\7.0\\<YourProjectName\>\\<YourProjectName\>\Debug 
 
 8. Drag and drop the .hex project file into your CURIOSITY drive.
 
 ## View your live data!
 
 And that's it! If you've edited your device with the Atmel START rapid development tool, you should see live data flowing to your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-uid\>. 
+
+
+Want to build something bigger? We can help you scale your projects into solutions. [Talk to an IoT expert.](https://www.leverege.com/contact-us) 
