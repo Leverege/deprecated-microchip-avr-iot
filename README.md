@@ -129,7 +129,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
     <img src="" height="150">
     
-3. Search for "AVR IoT WG Sensor Node"
+3. Search for **ATMEGA4808** and select **AVR IoT WG Sensor Node**.
 
     <img src="" height="150">
     
