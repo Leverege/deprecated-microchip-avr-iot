@@ -127,25 +127,29 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
 2. Click the **Browse Example** button. 
     
-    <img src="" height="150">
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/Atmel-START-browse.png" height="150">
     
 3. Search for **ATMEGA4808** and select **AVR IoT WG Sensor Node**.
 
-    <img src="" height="150">
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-search.png" height="150">
     
 4. Click on **Open Example**.
     
-    <img src="" height="150">
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-open-example.png" height="150">
     
 5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID.
 
-    <img src="" height="150">
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-cloudconfig.png" height="150">
     
 6. Switch to the **Export Project** tab and click on **Download Pack**.
+
+    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-export-dl.png" height="150">
 
 7. Open the .atzip file in Atmel Studio and select **Build Solution** under the Build menu bar (or hit F7). Atmel Studio will generate a .hex file in the folder where you saved your project. 
 
    By default, it will be located in ..\Atmel_Studio\7.0\\<YourProjectName\>\\<YourProjectName\>\Debug 
+   
+   <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/Atmel-build-solution.png" height="150">
 
 8. Drag and drop the .hex project file into your CURIOSITY drive.
 
