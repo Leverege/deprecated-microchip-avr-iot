@@ -17,6 +17,7 @@ export default class WelcomeInset extends React.Component {
             text="Go to Your Device"
             href={`/device/${deviceId}`}
             color="blue" />
+          <p>If you are connecting a different board, you may need to configure the IoT Core Registry name in the recordMessage Cloud Function and on your device.</p>
         </div>  
       )
     }
@@ -27,6 +28,7 @@ export default class WelcomeInset extends React.Component {
           <br /><br />
           <span className="device-link">{`${window.location.hostname}/device/<Your Device's UID>`}</span>
         </p>
+        <p>If you are connecting a different board, you may need to configure the IoT Core Registry name in the recordMessage Cloud Function and on your device.</p>
       </div> 
     )
   }

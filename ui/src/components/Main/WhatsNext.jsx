@@ -10,7 +10,10 @@ export default class WhatsNext extends React.Component {
 
   render() {
     return (
-      <InfoSection className="next" title="Explore Leverege's Use Cases">
+      <InfoSection className="next" title="What's Your Use Case?">
+        <p className="next-sub">
+        Below you can check out the IoT use cases that we’re already powering. Don’t see your use case? Don’t worry, we can help you make it a reality.
+        </p>
         <div className="next-wrapper">
           <TileDemo 
             image={hosdemo} 

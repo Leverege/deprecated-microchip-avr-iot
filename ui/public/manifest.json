@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "AVR-IoT",
+  "name": "AVR-IoT powered by Leverege",
   "icons": [
     {
       "src": "favicon.ico",
