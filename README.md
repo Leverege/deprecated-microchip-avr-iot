@@ -114,6 +114,20 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 6. In the upload window, navigate to the CURIOSITY drive, then select PUBKEY.TXT and click add to upload it. 
     
     <img src="https://storage.googleapis.com/avr-iot-media/iotcore-click-add.png" height="150">
+    
+## 5. Update your AVR-IoT device firmware
+
+1. Navigate to http://start.atmel.com/
+
+2. Click the **Browse Example** button. 
+
+3. Search for "AVR IoT WG Sensor Node"
+
+4. Click on **Open Example**.
+
+5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID.
+
+    <img src="" height="150">
 
 ## View your live data!
 
