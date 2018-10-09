@@ -31,7 +31,7 @@ try {
     }
 
     let result = data.replace( /'<fbconfig>'/g, configJson );
-    result = data.replace( '<deviceid>', deviceId );
+    result = result.replace( '<deviceid>', deviceId );
   
     fs.writeFileSync( './ui/src/Config.js', result, 'utf8' );
   } );
