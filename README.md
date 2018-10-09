@@ -8,7 +8,7 @@
     <a href="https://www.leverege.com">
         <img src="https://storage.googleapis.com/avr-iot-media/lvg-logo.png" alt="Leverege logo" width=72 height=72 />
     </a>
-    <h3 align="center">AVR-IoT Quick Start</h3>
+    <h2 align="center">AVR-IoT Quick Start</h2>
     <p align="center">
         A rapid deployment tool for getting your AVR-IoT data on the cloud. Powered by Leverege.
         <br>
@@ -19,8 +19,6 @@
 </p>
 
 (Links will open in this window. Shift+click, command+click, or middle mouse click to open in new window or tab.)
-
-# AVR-IoT Quick Start
 
 This repository contains resources for quickly connecting your [AVR-IoT device](https://avr-iot.com/) to your own Google Project and deploying a live UI to Firebase.
 
