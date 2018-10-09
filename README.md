@@ -117,14 +117,20 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
 ## 5. Update your AVR-IoT device firmware
 
-1. Navigate to <a href="http://start.atmel.com/" target="_blank">Atmel START</a>
+1. Navigate to <a href="http://start.atmel.com/" target="_blank">Atmel START</a>. 
 
 2. Click the **Browse Example** button. 
-
+    
+    <img src="" height="150">
+    
 3. Search for "AVR IoT WG Sensor Node"
 
+    <img src="" height="150">
+    
 4. Click on **Open Example**.
-
+    
+    <img src="" height="150">
+    
 5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID.
 
     <img src="" height="150">
