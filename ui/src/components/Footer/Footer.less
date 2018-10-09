@@ -3,17 +3,45 @@
 .site-footer {
   box-sizing: border-box;
   margin: 0;
-  padding: 40px 64px 48px 64px;
+  padding: 40px 64px 27px 64px;
   justify-content: space-between;
-  background-color: @site-background;
+  background-color: #31333F;
   width: 100%;
+
+  & .levLogo {
+    text-align: center;
+    margin-top: 58px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    font-family: @brand-font;
+    font-size: 18px;
+    font-style: italic;
+    letter-spacing: 1.13px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    & .levLogo-wrapper, h4 {
+      display: inline-block;
+      margin: 0;
+      height: 18px;
+    }
+
+    & img {
+      margin-left: 10px;
+      height: 100%;
+    }
+  }
 }
 
 .site-footer-content {
   display: flex;
+  justify-content: space-around;
 }
 
-@media screen and (max-width: 915px) {
+@media screen and (max-width: @content-width - 1) {
   .site-footer {
     padding: 40px 20px;
   }

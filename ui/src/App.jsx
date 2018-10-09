@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
+import 'react-slidedown/lib/slidedown.css'
 import TopNavBar from './components/TopNavBar/TopNavBar';
 import Modal from './components/Modal/Modal';
 import WelcomePane from './components/WelcomePane/WelcomePane';
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
+import Overview from './components/Main/Overview';
 
 import './css/config.less';
 import './app.less'
-import Overview from './components/Main/Overview';
 
 class App extends Component {
   constructor( props ) {
@@ -20,6 +21,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log( 'Powered by Leverege. IoT is hard. We make it easy.' )
     const contentSection = document.getElementById( 'App-content' );
     contentSection.addEventListener( 'scroll', this.handleScroll );
   }
@@ -30,24 +32,20 @@ class App extends Component {
   }
 
   renderModal = () => {
-    if ( this.props.showModal ) {
-      return <Modal />
-    }
-    return null
+    return this.props.showModal ? <Modal /> : null
   }
 
   render() {
     return (
-      <Router>
+      <Router >
         <div className="App">
           {this.renderModal()}
           <TopNavBar showShadow={this.state.showShadow} />
-          <div id="App-content">          
+          <div id="App-content">
             <Switch>
               <Route exact path="/device/:uid" component={Main} />
               <Route component={WelcomePane} />            
             </Switch>
-            <Route exact path="/" component={Overview} />
             <Footer />
           </div>          
         </div>

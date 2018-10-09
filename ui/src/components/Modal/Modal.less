@@ -22,15 +22,25 @@
   margin-top: 36px;
   margin-bottom: 15px;
   text-align: right;
+
+  .cancel {
+    background: transparent;
+    border: none;
+    text-decoration: underline;
+    color: @bright-blue;  
+  
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  button, 
+  .btn {
+    margin-left: 37px;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
 }
 
-.modal-buttons .cancel {
-  background: transparent;
-  border: none;
-  text-decoration: underline;
-  color: @bright-blue;  
-}
-
-.modal-buttons button {
-  margin-left: 37px;
-}

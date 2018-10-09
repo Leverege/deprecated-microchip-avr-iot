@@ -21,8 +21,38 @@ function normalizeDomain( dataArray, minDistance ) {
   return [ Math.floor( min - minDistance ), Math.ceil( max + minDistance ) ]
 }
 
+function openSaveFileDialog( data, filename, mimetype ) {
+
+  if ( !data ) return
+
+  const blob = data.constructor !== Blob
+    ? new Blob( [ data ], { type : mimetype || 'application/octet-stream' } )
+    : data
+
+  if ( navigator.msSaveBlob ) {
+    navigator.msSaveBlob( blob, filename );
+    return
+  }
+
+  const lnk = document.createElement( 'a' ),
+    url = window.URL
+
+  const objectURL = url.createObjectURL( blob )
+
+  if ( mimetype ) {
+    lnk.type = mimetype;
+  }
+
+  lnk.download = filename || 'download';
+  lnk.href = objectURL
+  lnk.dispatchEvent( new MouseEvent( 'click' ) );
+  setTimeout( url.revokeObjectURL.bind( url, objectURL ) );
+
+}
+
 module.exports = {
   parseToPrecision,
   normalizeDomain,
-  getTimeOffset
+  getTimeOffset,
+  openSaveFileDialog
 }

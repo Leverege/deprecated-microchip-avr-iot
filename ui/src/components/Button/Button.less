@@ -1,8 +1,12 @@
 @import "../../css/SiteTheme.less";
 
+a.btn {
+  display: inline-block;
+}
+
 .btn {
   box-sizing: border-box;
-  padding: 10px 28px;
+  padding: 8px 28px;
   font-family: @button-font;
   font-size: 14px;
   font-weight: normal;
@@ -16,7 +20,7 @@
   &:hover {
     text-decoration: none;
     cursor: pointer;
-    transform: scale(1.02);
+    transform: scale(1.02)!important;
       -webkit-transition-duration: .25s;
       -moz-transition-duration: .25s;
       -o-transition-duration: .25s;
@@ -35,8 +39,14 @@
 }
 
 .btn--blue {
-  background-color: @bright-blue;
+  background-color: #4B11E7;
   color: #fff
+}
+
+.btn--blue-inverted {
+  background-color: #fff;
+  color: #4B11E7;
+  border: 1px solid #4B11E7;
 }
 
 .btn.flat {

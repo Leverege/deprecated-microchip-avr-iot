@@ -15,10 +15,24 @@
     margin-right: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
-@media screen and (max-width: 915px) {
+.navLogo {
+    width: 100px;
+    margin-left: 20px;
+
+    img {
+        width: 100%;
+    }
+
+    &.mainLogo {
+        margin-right: auto;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 950px) {
     .topnav-content {
         padding: 8px 15px;
     }
@@ -29,8 +43,4 @@
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.4);
   -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.4);
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.4);
-}
-
-.topnav-brand-links a {
-    margin-left: 15px;
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { VictoryChart, VictoryLine, VictoryAxis } from 'victory'
 import { ThreeBounce } from 'better-react-spinkit'
+import { SlideDown } from 'react-slidedown'
 import TileInset from '../TileInset/TileInset'
 import InfoSection from '../InfoSection/InfoSection'
-import { NumericalGraph } from '../graph/Graph';
+import { NumericalGraph } from '../graph/Graph'
 
 import './GraphSection.less';
 
@@ -28,7 +28,7 @@ class GraphSection extends React.Component {
         graphData = <NumericalGraph dataType={dataType} deviceData={deviceData} />
       }
       const graph = (
-        <TileInset title={dataType} className={`graph graphs-${position}`}>
+        <TileInset key={`${dataType}-graph-${position}`} title={dataType} className={`graph graphs-${position}`}>
           { graphData }
         </TileInset>
       )
@@ -39,21 +39,24 @@ class GraphSection extends React.Component {
   }
 
   render() {
-    const { deviceSN, deviceData, firebaseAnimationComplete } = this.props
+    const { deviceSN, deviceData, firebaseAnimationComplete, connectedToFirebase } = this.props
     const charts = this.renderGraphs( deviceData, !firebaseAnimationComplete )
 
     return (
-      <InfoSection className="graphs" title={`Device UID: ${deviceSN}`}>
-        <div className="graphs-wrapper">
-          { charts }
-        </div>
-      </InfoSection>
+      <SlideDown transitionOnAppear closed={!connectedToFirebase} >
+        <InfoSection className="graphs" title={`Device UID: ${deviceSN}`}>
+          <div className="graphs-wrapper">
+            { charts }
+          </div>
+        </InfoSection>
+      </SlideDown>
     )
   }
 }
 
 const mapStateToProps = state => ( {
   deviceData : state.DeviceReducer.deviceData,
+  connectedToFirebase : state.DeviceReducer.connectedToFirebase,
   firebaseAnimationComplete : state.UIReducer.animationComplete.firebase,
   deviceSN : state.DeviceReducer.deviceSN
 } )

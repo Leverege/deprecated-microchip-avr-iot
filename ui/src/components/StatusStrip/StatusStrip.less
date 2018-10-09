@@ -11,7 +11,7 @@
     margin-right: auto;
 }
 
-@media screen and (max-width: 915px) {
+@media screen and (max-width: @content-width - 1) {
   .status-strip {
     width: 100%;
   }
@@ -48,7 +48,7 @@
 }
 
 .status-strip .line .blue {
-  transition: 1s ease-in;
+  transition: width 1s ease-in;
   height: 53%;
   border-bottom: 4px solid @bright-blue;
   z-index: 0;

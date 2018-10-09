@@ -22,7 +22,10 @@ class WirelessConfig extends React.Component {
 
   componentDidUpdate = () => {
     if ( this.props.configDownloaded ) {
-      setTimeout( document.getElementById( 'connectedVideo' ).play(), 500 )
+      const videoInstructions = document.getElementById( 'connectedVideo' )
+      if ( videoInstructions ) {
+        setTimeout( videoInstructions.play, 500 )
+      }
     }
   }
 
@@ -36,24 +39,32 @@ class WirelessConfig extends React.Component {
 
   render() {
     const { configDownloaded } = this.props;
-    const buttonStyle = {
-      padding : '8px 26px'
-    };
 
     let inset;
     if ( configDownloaded ) {
       inset = (
         <div>
-          <p className="wireless-config-instructions">Download (or drag and drop) your wifi.config file onto your device. If WiFi connection is successful, you should see your blue LED light up on the device.</p>
+          <p className="wireless-config-instructions">
+            Download (or drag and drop) your wifi.config file onto your device. 
+            If WiFi connection is successful, you should see your blue LED light up on the device.
+          </p>
           <div className="wireless-config-connected-video">
             <video loop autoPlay muted id="connectedVideo">
               <source src="https://storage.googleapis.com/avr-iot-media/avr-iot_wifi_connected.mp4" />
             </video>
           </div>
-          <p className="wireless-config-instructions">Once you see a steady blue light, click Confirm to attempt to make a connection. Click Retry to enter your Wifi information and generate a new config file.</p>
+          <p className="wireless-config-instructions">
+            Once you see a steady blue light, click Confirm to attempt to make a connection. 
+            Click Retry to enter your Wifi information and generate a new config file.
+          </p>
           <div className="wireless-config-buttons">
             <Button className="wireless-config-btn" text="Retry" type="button" onClick={this.handleRetryClick} color="gray" />
-            <Button className="wireless-config-btn" text="Confirm" type="button" onClick={this.handleConfirmConnection} />
+            <Button 
+              className="wireless-config-btn" 
+              text="Confirm" 
+              type="button" 
+              color="blue-inverted"
+              onClick={this.handleConfirmConnection} />
           </div>
         </div>
       )
@@ -64,11 +75,17 @@ class WirelessConfig extends React.Component {
     return (
       <InfoSection className="wireless-config" title="Wireless Network Connection">
         <header className="wireless-config-alert">
-          <p className="wireless-config-alert-text">We couldn't retrieve recent data from your device. To connect to a network automatically, ensure the device is plugged in.</p>
+          <p className="wireless-config-alert-text">
+            We couldn't retrieve recent data from your device. 
+            To connect to a network automatically, ensure the device is plugged in.
+          </p>
         </header>
         <div className="wireless-config-wrapper">
           <TileInset id="mobile-warning" title="Mobile users">
-            <p>To configure your device's WiFi, visit this site from a laptop or PC. Mobile configuration is not currently supported.</p>
+            <p>
+              To configure your device's WiFi, visit this site from a laptop or PC. 
+              Mobile configuration is not currently supported.
+            </p>
           </TileInset>
           <TileInset className="wireless-config-tile wireless-config-left" title="Wireless Network Login">
             { inset }

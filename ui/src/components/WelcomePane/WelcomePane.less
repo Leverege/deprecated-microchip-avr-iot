@@ -3,18 +3,23 @@
 .welcome {  
   background-color: #000;
   background: 
-    url('../../images/lockBackground-black.png');
+    url('../../images/purple-background.png');
   background-size: cover;
   background-position: center;
   font-family: @brand-font;
-  padding: 60px;
+  padding-bottom: 35px;
+  padding-top: 130px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  transition: .75s ease-in
 }
 
-.welcome.compact {
-  padding: 25px 60px;
+.hidden {
+  opacity: 0!important;
+  height: 0!important;
+  overflow: hidden!important;
+  padding: 0!important;
 }
 
 .welcome-wrapper {
@@ -27,12 +32,20 @@
   display: flex;
   justify-content: space-between;
   width: @content-width;
-  margin-bottom: 67px;
+  margin-bottom: 127px;
   margin-left: auto;
   margin-right: auto;
   transition: .5s ease-in
 }
 
+.welcome-main-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.welcome.compact {
+  padding-top: 20px; 
+}
 .welcome-content.compact {
   margin-bottom: 25px;
 }
@@ -44,9 +57,8 @@
 
 .welcome-full {
   color: @almost-white;
-  width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 475px;
+  margin-right: 35px;
   z-index: 3;
 }
 
@@ -64,20 +76,9 @@
   font-weight: 300;
 }
 
-
-.welcome-secondary-header {
-  margin: 14px 0 4px 0;
-  font-size: 16px;
-}
-
-.welcome-external-link {
-  text-decoration: underline;
-}
-
-
-@media screen and (max-width: 915px) {
+@media screen and (max-width: @content-width + 10 ) {
   .welcome {
-    padding: 20px;
+    padding: 20px 20px 20px 40px;
   }
 
   .welcome-wrapper {
@@ -87,12 +88,22 @@
   .welcome-content {
     flex-wrap: wrap;
     width: 100%;
+    margin-bottom: 40px;
   }
 
   .welcome-left {
     width: 100%;
     max-width: 600px;
-    margin-left: auto;
     margin-right: auto;
+  }
+
+  .welcome-right {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 475px ) {
+  .welcome-full {
+    width: 100%;
   }
 }

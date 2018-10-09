@@ -4,11 +4,37 @@
   background-color: rgba(216,216,216,0.2);
 }
 
+.graph {
+  margin-bottom: 20px;
+  max-width: 475px;
+}
+
 .graphs-loading {
   box-sizing: border-box;
   width: 370px;
   height: 255px;
   padding: 100px 0 0 160px; 
+}
+
+.graphs-wrapper {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 950px;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-wrapper {
+  max-width: @content-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.graphs-left {
+  margin-right: 32px;
 }
 
 @media screen and (max-width: 800px) {
@@ -19,23 +45,11 @@
   }
 }
 
-.graphs-wrapper {
-  display: flex;
-  width: @content-width;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: space-between;
-}
-
-.graphs-left {
-  margin-right: 32px;
-}
-
-@media screen and (max-width: 915px) {
+@media screen and (max-width: @content-width - 1) {
   .graphs-wrapper {
     margin-top: 30px;
     width: 100%;
-    max-width: @content-width;
+    max-width: 960px;
     flex-wrap: wrap;
   }
 
@@ -49,5 +63,10 @@
     margin-right: auto;
     margin-bottom: 20px;
     min-height: 350px; 
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
   }
 }

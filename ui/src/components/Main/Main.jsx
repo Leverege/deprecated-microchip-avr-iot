@@ -43,7 +43,7 @@ class Main extends React.Component {
     if ( !this.props.establishingFirebaseConnection && this.props.deviceConnected && !!this.props.deviceSN ) {
       if ( this.props.connectedToFirebase ) {
         // all systems go - render graphs & marketing info
-        return [ ( <GraphSection /> ), ( <Overview /> ), ( <WhatsNext /> ) ]
+        return [ ( <GraphSection key="graphsection" /> ), ( <Overview key="overviewsection" /> ), ( <WhatsNext key="whatsnextsection" /> ) ]
       } 
       // failed to get fresh data from firebase - request manual wifi info
       return <WirelessConfig />
@@ -53,8 +53,8 @@ class Main extends React.Component {
 
   render() {
     return (
-      <main>
-        <WelcomePane hideInset />
+      <main className="main">
+        <WelcomePane minimal />
         <SlideDown className="my-dropdown-slidedown">
           { this.renderSecondaryContent() }
         </SlideDown>

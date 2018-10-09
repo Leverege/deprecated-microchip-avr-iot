@@ -41,75 +41,86 @@
   margin-right: auto;
 }
 
+.wireless-config {
+  &.info-section {
+    padding-left: 40px;
+  }
 
-.wireless-config .wireless-config-left.tile {
-    margin-right: 80px;
-    width: 464px;
-    max-height: 450px;
-}
+  & .wireless-config-left.tile {
+      margin-right: 80px;
+      width: 464px;
+  }
 
-.wireless-config .wireless-config-left .wireless-config-instructions {
-    height: 72px;
-    width: 400px;
-    color: @almost-black;
-    font-family: @brand-font;
+  & .wireless-config-left {
+    & .wireless-config-instructions {
+      height: 72px;
+      width: 400px;
+      color: @almost-black;
+      font-family: @brand-font;
+      font-size: 14px;
+      line-height: 24px;
+    }
+    & .wireless-config-buttons {
+      margin-top: 46px;
+      text-align: right;
+
+      & .btn {
+        margin-left: 16px;
+      }
+    }
+  }
+
+  & .wireless-config-right {
+    height: 450px;
+
+    & .wireless-config-instruction-header {
+      height: 24px;
+      width: 401px;
+      color: @almost-black;
+      font-family: @brand-font;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+
+    & .wireless-config-instructions {
+      margin-bottom: 88px;
+    }
+
+    & li {
+      height: 16px;
+      width: 401px;
+      color: @almost-black;
+      font-family: @brand-font;
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 8px;
+    }
+  }
+
+  & .wireless-config-help {
+    box-sizing: border-box;
+    max-width: 112px;
+    border-radius: 2px;
+    padding: 8px 27px;
+    margin-top: 40px;
+    background-color: @bright-blue;
+    color: #fff;
+    font: @button-font;
     font-size: 14px;
-    line-height: 24px;
-}
+    font-weight: 500;
+    display: block;
 
-.wireless-config .wireless-config-left .wireless-config-buttons {
-    margin-top: 46px;
-    text-align: right;
-}
-
-.wireless-config .wireless-config-left .wireless-config-buttons .btn {
-    margin-left: 16px;
-}
-
-.wireless-config .wireless-config-right .wireless-config-instruction-header {
-    height: 24px;
-    width: 401px;
-    color: @almost-black;
-    font-family: @brand-font;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-}
-
-.wireless-config .wireless-config-right .wireless-config-instructions {
-    margin-bottom: 88px;
-}
-
-.wireless-config .wireless-config-right li {
-    height: 16px;
-    width: 401px;
-    color: @almost-black;
-    font-family: @brand-font;
-    font-size: 14px;
-    line-height: 16px;
-    margin-bottom: 8px;
-}
-
-.wireless-config .wireless-config-help {
-  box-sizing: border-box;
-  max-width: 112px;
-  border-radius: 2px;
-  padding: 8px 27px;
-  margin-top: 40px;
-  background-color: @bright-blue;
-  color: #fff;
-  font: @button-font;
-  font-size: 14px;
-  font-weight: 500;
-  display: block;
-}
-
-.wireless-config .wireless-config-help:hover {
-  text-decoration: none;
-}
-
-.wireless-config .wireless-config-buttons .wireless-config-btn {
-  padding: '8px 26px'
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  
+ & .wireless-config-buttons {
+    & .wireless-config-btn {
+      padding: '8px 26px'
+    }
+ }
 }
 
 #setup-video {
@@ -134,7 +145,7 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 915px) {
+@media screen and (max-width: @content-width - 1) {
   .wireless-config {
     padding-top: 100px;
   }
@@ -149,7 +160,6 @@
     height: auto;
     width: 100%;
     max-width: 464px;
-    margin-left: auto;
     margin-right: auto;
     opacity: 1;
     margin-bottom: 20px;
@@ -157,7 +167,6 @@
 
   .wireless-config .wireless-config-left.tile,
   .wireless-config .wireless-config-right {
-    margin-left: auto;
     margin-right: auto;
     width: 100%;
     max-width: 464px;

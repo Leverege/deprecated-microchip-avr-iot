@@ -1,102 +1,40 @@
 @import '../../css/SiteTheme.less';
 
-// overview section
-.overview-header {
-  height: 276px;
-  width: 100%;
-  background-size: 100% 100%;
-  background-position: center;
-  background: url('../../images/illustration-background.png');
+.overview {
+  max-width: @content-width;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  padding: 54px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+}
+
+.overview-wrapper {
+  background: #fff;
 }
 
 .overview-image {
-  height: 189px;
-  width: 100%;
-  text-align: center;
-  margin: 24px 0;
-}
-
-.overview-image img {
-  height: 100%;
-}
-
-.overview-image:first-of-type {
-  height: 116px;
-}
-
-.overview-body {
-  width: 90%;
-  max-width: 704px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 64px 0;
-}
-
-.overview-heading {
-  font-size: 20px;
-  color: @almost-black;
-  font-weight: bold;
-  margin: 0 0 16px 0;
-}
-
-.overview-content {
-  margin-bottom: 32px;
-  font-size: 14px;
-  color: #000;
-  display: flex;
-}
-
-.overview-content > *:first-child {
-  margin-right: 25px;
-}
-
-.overview-video {
-  width: 300px; 
-  height: 188px;
-  overflow: hidden;
+  width: 332px;
   flex-shrink: 0;
-}
+  margin-right: 84px;
 
-#deviceVideo {
-  width: 113%;
-  margin-left: -6%;
-  margin-top: -1px;
-}
-
-@media screen and (max-width: 915px) {
-  .overview-content {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .overview-video {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .overview-image {
-    order: 1;
-  }
-
-  .overview-image:first-of-type {
-    height: 189px;
+  & img {
+    width: 100%
   }
 }
 
-@media screen and (max-width: 449px) {
-  .overview-video {
-    width: 100%;
-    margin-left: 15px;
-    margin-right: 15px;
-    height: auto;
-    flex-shrink: initial;
+.overview-text {
+  max-width: 400px;
+
+  h3 {
+    color: #282828;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 12px;
   }
 
-  #deviceVideo {
-    height: 110%;
-    margin-top: -4%;
+  p {
+    margin-bottom: 12px;
   }
 }

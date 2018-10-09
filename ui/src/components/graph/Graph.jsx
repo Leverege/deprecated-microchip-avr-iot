@@ -3,7 +3,7 @@ import { VictoryChart, VictoryLine, VictoryAxis } from 'victory'
 import { parseToPrecision, normalizeDomain } from '../../utils/utils'
 
 export function NumericalGraph( props ) {
-  const { deviceData, dataType } = props
+  const { deviceData, dataType, className } = props
 
   function toString( y ) { return `${y}` }
   function toNull() { return '' }
@@ -20,7 +20,7 @@ export function NumericalGraph( props ) {
   const yDomain = normalizeDomain( dataVals, 1 ) // rounds y-axis labels to one decimal place
   
   return (
-    <VictoryChart padding={{ top : 0, left : 50, bottom : 55, right : 25 }}>
+    <VictoryChart className={className} padding={{ top : 0, left : 50, bottom : 55, right : 25 }}>
       <VictoryAxis label="Time (s)" tickFormat={toNull} />
       <VictoryAxis 
         dependentAxis 

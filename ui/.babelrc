@@ -1,7 +1,11 @@
 {
-  "presets": ["es2015", "stage-1", "react"],
-  "plugins": [     
-    ["babel-root-import",  [{ "rootPathPrefix": "~", "rootPathSuffix" : "src" } ]] ,
-    "transform-class-properties"
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": [ 
+    "transform-class-properties", 
+    "transform-object-assign",
+    [
+      "babel-plugin-root-import",  
+      { "rootPathPrefix": "~", "rootPathSuffix" : "src" }
+    ] 
   ]
 }

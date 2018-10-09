@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+.info-section-wrapper {
+    background-color: #fff;
+}
+
 .info-section-header {
     height: 24px;
     color: @almost-black;
@@ -18,7 +22,7 @@
     margin: 0 auto 24px auto;
 }
 
-@media screen and (max-width: 915px) {
+@media screen and (max-width: @content-width - 1) {
     .info-section {
         padding-left: 20px;
         padding-right: 20px;

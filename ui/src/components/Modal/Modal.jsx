@@ -1,9 +1,10 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { toggleModal } from '../../actions/UIActions';
-import TileInset from '../TileInset/TileInset';
-import Button from '../Button/Button';
-import './Modal.less';
+import React from 'react'
+import { connect } from 'react-redux'
+import ReactGA from 'react-ga'
+import { toggleModal } from '../../actions/UIActions'
+import TileInset from '../TileInset/TileInset'
+import Button from '../Button/Button'
+import './Modal.less'
 
 /**
  * @param {function} onConfirm what the modal does on confirm
@@ -53,15 +54,32 @@ class Modal extends React.Component {
   }
 
   render() {
-    const { modalType } = this.props;
-    const title = modalType === 'graduate' ? 'Remove Device from Sandbox' : 'Coming Soon';
+    const { modalType } = this.props
+    const title = modalType === 'graduate' ? 'Remove Device from Sandbox' : 'Coming Soon'
+
+    let confirmButton
+    if ( modalType === 'graduate' ) {
+      confirmButton = (
+        <Button 
+          id="modal-confirm" 
+          onClick={() => {
+            ReactGA.event( {
+              category : 'Graduate',
+              action : 'Graduate clicked'
+            } )
+          }}
+          href="https://github.com/Leverege/microchip-avr-iot/" 
+          style={{ padding : '8px 28px' }} 
+          text="Graduate" />
+      )
+    }
     return (
       <section className="modal-overlay" id="overlay" onClick={e => this.handleOverlayClick( e )}>
         <TileInset className="modal-dialog" title={title} >
           {this.renderText( modalType )}
           <div className="modal-buttons">
             <button id="modal-cancel" autoFocus className="cancel" onClick={this.toggleModal}>Cancel</button>
-            { modalType === 'graduate' ? <Button id="modal-confirm" href="https://github.com/Leverege/microchip-avr-iot/" style={{ padding : '8px 28px' }} text="Graduate" /> : '' }
+            { confirmButton }
           </div>
         </TileInset>
       </section>

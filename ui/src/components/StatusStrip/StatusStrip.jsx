@@ -14,7 +14,8 @@ class StatusStrip extends React.Component {
   }
 
   render() {    
-    const { deviceConnected, connectedToFirebase, establishingFirebaseConnection, deviceSpecified, lineLength } = this.props;
+    const { deviceConnected, connectedToFirebase, establishingFirebaseConnection, 
+            deviceSpecified, lineLength } = this.props;
     const deviceLive = deviceConnected && deviceSpecified;
     let lineFillLength;
     if ( lineLength === 3 ) {

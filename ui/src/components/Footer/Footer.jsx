@@ -1,51 +1,42 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import FooterLinks from '../FooterLinks/FooterLinks';
-import ContentWrapper from '../ContentWrapper/ContentWrapper';
-import { toggleModal } from '../../actions/UIActions';
-import './Footer.less';
+import React from 'react'
+import FooterLinks from '../FooterLinks/FooterLinks'
+import ContentWrapper from '../ContentWrapper/ContentWrapper'
+import levlogo from '../../images/lvg-white-logo.png'
 
-class Footer extends React.Component {
-  handleUnavailable = () => {
-    this.props.dispatch( toggleModal( 'unavailable' ) )
-  }
-  render() {
-    return (
-      <footer className="site-footer">
-        <ContentWrapper className="site-footer-content">
-          <FooterLinks header="Downloads">
-            <li><a href="#" onClick={this.handleUnavailable}>Main Example Image</a></li>
-            <li><a href="#" onClick={this.handleUnavailable}>Additional Images and Sensors</a></li>
-          </FooterLinks>
-          <FooterLinks header="Documentation">
-            <li><a href="#" onClick={this.handleUnavailable}>AVR-IOT User Guide</a></li>
-            <li><a href="#" onClick={this.handleUnavailable}>BOM</a></li>
-            <li><a href="#" onClick={this.handleUnavailable}>Schematic and Gerbers (complete)</a></li>
-          </FooterLinks>
-          <FooterLinks header="Rapid Development Tools">
-            <li><a href="https://start.atmel.com/" target="_blank">AVR START</a></li>
-            <li><a href="https://microchip.com/mcc" target="_blank">MPLAB Code Configurator</a></li>
-            <li><a href="#" onClick={this.handleUnavailable}>White Papers</a></li>
-            <li><a href="#" onClick={this.handleUnavailable}>Books</a></li>
-          </FooterLinks>
-          <FooterLinks header="Videos">
-            <li><a href="#" onClick={this.handleUnavailable}>MCHP 1 Minute</a></li>
-            <li><a href="#" onClick={this.handleUnavailable}>GOOGLE Quicklabs</a></li>
-          </FooterLinks>
-          <FooterLinks header="Other IOT Solutions &amp; Architecture">
-            <li><a href="http://www.microchip.com/design-centers/wireless-connectivity/low-power-wide-area-networks" target="_blank">LoRa Solutions</a></li>
-            <li><a href="#" onClick={this.handleUnavailable}>SECURE BLE</a></li>
-            <li><a href="#" onClick={this.handleUnavailable}>Arduino IoT</a></li>
-            <li><a href="#" onClick={this.handleUnavailable}>PIC-IOT.com</a></li>
-            <li><a href="#" onClick={this.handleUnavailable}>XPRESS</a></li>
-            <li><a href="http://www.microchip.com/design-centers/wireless-connectivity/embedded-wi-fi/get-started-with-atwinc1500-xstk" target="_blank">32-BIT solutions</a></li>
-            <li><a href="#" onClick={this.handleUnavailable}>SIP solutions</a></li>
-          </FooterLinks>
-        </ContentWrapper>
-      </footer>
-    )
+import './Footer.less'
 
-  }
+export default function Footer( props ) {
+  return (
+    <footer className="site-footer">
+      <ContentWrapper className="site-footer-content">
+        <FooterLinks header="Services">
+          <li><a href="https://www.leverege.com/getting-started-iot" target="_blank">Rapid Prototyping</a></li>
+          <li><a href="https://www.leverege.com/iot-platform" target="_blank">IoT Platform</a></li>
+          <li><a href="https://www.leverege.com/systems-integration" target="_blank">Systems Integration</a></li>
+        </FooterLinks>
+        <FooterLinks header="Videos">
+          <li><a href="https://www.leverege.com/usecases/solar-farm-solution" target="_blank">Solar Farm</a></li>
+          <li><a href="https://www.leverege.com/usecases/waste-management-solution" target="_blank">Waste Collection</a></li>
+          <li><a href="https://www.leverege.com/usecases/hospital-equipment-tracking" target="blank">Medical Asset Tracking</a></li>
+          <li><a href="https://www.leverege.com/blogpost/prototyping-indoor-tracking-system" target="blank">Indoor Asset Tracking</a></li>
+        </FooterLinks>
+        <FooterLinks header="Case Studies">
+          <li><a href="https://www.leverege.com/casestudy/sirenmarine" target="_blank">Connected Boats</a></li>
+          <li><a href="https://www.leverege.com/casestudy/manheim" target="_blank">Auction Fleet Management</a></li>
+        </FooterLinks>
+        <FooterLinks header="More Resources">
+          <li><a href="http://www.microchip.com/design-centers/wireless-connectivity/low-power-wide-area-networks" target="_blank">LoRa Solutions</a></li>
+          <li><a href="https://www.leverege.com/iot-resources" target="blank">Blog</a></li>
+          <li><a href="https://www.leverege.com/research-papers" target="blank">Research</a></li>
+          <li><a href="https://www.leverege.com/iot-intro-ebook" target="_blank">IoT eBook</a></li>
+        </FooterLinks>
+      </ContentWrapper>
+      <div className="levLogo" onClick={() => window.open( 'https://www.leverege.com/', '_blank' )}>
+        <h4>Powered by</h4>
+        <div className="levLogo-wrapper">
+          <img src={levlogo} alt="Leverege" />
+        </div>
+      </div>
+    </footer>
+  )
 }
-
-export default connect()( Footer )

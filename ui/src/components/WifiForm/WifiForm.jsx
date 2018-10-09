@@ -11,6 +11,7 @@ export class WifiForm extends React.Component {
 
   handleWifiSubmit = () => {
     const { ssid, pw, networkType } = this.props.form;
+    // validate form
     if ( !ssid ) {
       this.props.dispatch( setWifiFormError( { field : 'ssid', msg : 'SSID is required' } ) )
     } else if ( !pw && networkType !== '1' ) {
@@ -30,15 +31,15 @@ export class WifiForm extends React.Component {
     this.props.dispatch( togglePwVis() )
   }
 
-  handleSSIDChange = (value) => {
+  handleSSIDChange = ( value ) => {
     this.props.dispatch( validateAndSetField( { value, field : 'ssid' } ) )
   }
 
-  handlePwChange = (value) => {
+  handlePwChange = ( value ) => {
     this.props.dispatch( validateAndSetField( { value, field : 'pw' } ) )
   }
 
-  handleNetworkTypeChange = (value) => {
+  handleNetworkTypeChange = ( value ) => {
     this.props.dispatch( networkTypeChange( value ) )
   }
 
@@ -48,6 +49,7 @@ export class WifiForm extends React.Component {
     const errorMsg = error ? <h4 className="error">{ error.msg }</h4> : '';
 
     const buttonStyle = {
+      marginTop : '20px', 
       padding : '8px 26px'
     };
 
@@ -67,13 +69,33 @@ export class WifiForm extends React.Component {
           <legend className="wifi-form-label">
           Network Type
           </legend>
-          <RadioButton id="radio-open" text="Open" selected={networkType === '1'} val="1" onClick={this.handleNetworkTypeChange} />
-          <RadioButton id="radio-wpa" text="WPA/WPA2" selected={networkType === '2'} val="2" onClick={this.handleNetworkTypeChange} />
-          <RadioButton id="radio-wep" text="WEP" selected={networkType === '3'} val="3" onClick={this.handleNetworkTypeChange} />
+          <RadioButton 
+            id="radio-open" 
+            text="Open" 
+            selected={networkType === '1'} 
+            val="1" 
+            onClick={this.handleNetworkTypeChange} />
+          <RadioButton 
+            id="radio-wpa" 
+            text="WPA/WPA2" 
+            selected={networkType === '2'} 
+            val="2" 
+            onClick={this.handleNetworkTypeChange} />
+          <RadioButton 
+            id="radio-wep" 
+            text="WEP" 
+            selected={networkType === '3'} 
+            val="3" 
+            onClick={this.handleNetworkTypeChange} />
         </fieldset>
         { networkType !== '1' ? pwSection : '' }
         <div className="wifi-form-buttons">
-          <Button style={buttonStyle} text="Download Configuration" type="button" onClick={this.handleWifiSubmit} />
+          <Button 
+            style={buttonStyle} 
+            color="blue-inverted"
+            text="Download Configuration" 
+            type="button" 
+            onClick={this.handleWifiSubmit} />
         </div>
       </div>
     )
