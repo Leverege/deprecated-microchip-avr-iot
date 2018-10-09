@@ -21,7 +21,7 @@
 (Links will open in this window. Shift+click, command+click, or middle mouse click to open in new window or tab.)
 
 ## Table of Contents
-1. [Set up your GCP and Firebase Projects](set-up-your-gcp-and-firebase-projects)
+1. [Set up your GCP and Firebase Projects](1.-set-up-your-gcp-and-firebase-projects)
 2. asdf
 3. asdf
 4. asdf
