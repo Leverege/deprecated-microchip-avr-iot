@@ -43,7 +43,7 @@ script, you'll need to add your device's secure pubkey to the device's entry in 
 
 ## Set up your GCP and Firebase Projects
 
-The quickstart requires that you have a Firebase project connected to a GCP project will billing enabled.
+The quickstart requires that you have a Firebase project connected to a GCP project with billing enabled.
 
 ### GCP Project
 
