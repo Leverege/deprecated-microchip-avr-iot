@@ -49,7 +49,7 @@ class WirelessConfig extends React.Component {
             If WiFi connection is successful, you should see your blue LED light up on the device.
           </p>
           <div className="wireless-config-connected-video">
-            <video loop autoPlay muted id="connectedVideo">
+            <video loop autoplay muted id="connectedVideo">
               <source src="https://storage.googleapis.com/avr-iot-media/avr-iot_wifi_connected.mp4" />
             </video>
           </div>

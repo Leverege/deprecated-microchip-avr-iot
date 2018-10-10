@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ThreeBounce } from 'better-react-spinkit'
-import { SlideDown } from 'react-slidedown'
 import TileInset from '../TileInset/TileInset'
 import InfoSection from '../InfoSection/InfoSection'
 import { NumericalGraph } from '../graph/Graph'
@@ -43,13 +42,11 @@ class GraphSection extends React.Component {
     const charts = this.renderGraphs( deviceData, !firebaseAnimationComplete )
 
     return (
-      <SlideDown transitionOnAppear closed={!connectedToFirebase} >
-        <InfoSection className="graphs" title={`Device UID: ${deviceSN}`}>
-          <div className="graphs-wrapper">
-            { charts }
-          </div>
-        </InfoSection>
-      </SlideDown>
+      <InfoSection className="graphs" title={`Device UID: ${deviceSN}`}>
+        <div className="graphs-wrapper">
+          { charts }
+        </div>
+      </InfoSection>
     )
   }
 }

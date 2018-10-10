@@ -7,12 +7,26 @@ import WelcomeInset from '../WelcomeInset/WelcomeInset'
 import './WelcomePane.less';
 
 class WelcomePane extends React.Component {
+  constructor( props ) {
+    super( props )
+    this.state = {
+      showStatus : true
+    }
+  }
+
+  componentDidUpdate() {
+    if ( this.props.firebaseAnimationComplete && this.state.showStatus ) {
+      setTimeout( () => this.setState( { showStatus : false } ), 500 )
+    }
+  }
+
   render() {
-    const { minimal, firebaseAnimationComplete } = this.props;
+    const { minimal } = this.props
+    const { showStatus } = this.state
 
     if ( minimal ) {
       return (
-        <SlideDown transitionOnAppear={false} closed={firebaseAnimationComplete} >
+        <SlideDown transitionOnAppear={false} closed={!showStatus} >
           <main className="welcome compact">
             <div className="welcome-wrapper">
               <StatusStrip />

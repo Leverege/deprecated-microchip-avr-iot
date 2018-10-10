@@ -2,9 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { SlideDown } from 'react-slidedown'
 import 'react-slidedown/lib/slidedown.css'
+import { FoldingCube } from 'better-react-spinkit'
 import WelcomePane from '../WelcomePane/WelcomePane'
 import WirelessConfig from '../WirelessConfig/WirelessConfig'
 import GraphSection from '../GraphSection/GraphSection'
+import InfoSection from '../InfoSection/InfoSection'
 import WhatsNext from './WhatsNext'
 import Overview from './Overview'
 import { 
@@ -39,25 +41,34 @@ class Main extends React.Component {
     }
   }
   
-  renderSecondaryContent() {
-    if ( !this.props.establishingFirebaseConnection && this.props.deviceConnected && !!this.props.deviceSN ) {
-      if ( this.props.connectedToFirebase ) {
-        // all systems go - render graphs & marketing info
-        return [ ( <GraphSection key="graphsection" /> ), ( <Overview key="overviewsection" /> ), ( <WhatsNext key="whatsnextsection" /> ) ]
-      } 
-      // failed to get fresh data from firebase - request manual wifi info
-      return <WirelessConfig />
-    }
-    return null // linter demands a return
-  }
-
   render() {
+    const { establishingFirebaseConnection } = this.props
+    const connected = ( this.props.deviceConnected && !!this.props.deviceSN && this.props.connectedToFirebase )
+
+    let main
+    if ( establishingFirebaseConnection ) {
+      main = (
+        <InfoSection 
+          title="" 
+          className="connecting">
+          <FoldingCube size={20} color="#4285F4" />
+          <h3 className="message">Checking device connectivity</h3>
+        </InfoSection>
+      )
+    } else if ( connected ) {
+      main = <GraphSection />
+    } else {
+      main = <WirelessConfig />
+    }
+
     return (
       <main className="main">
         <WelcomePane minimal />
-        <SlideDown className="my-dropdown-slidedown">
-          { this.renderSecondaryContent() }
-        </SlideDown>
+        {main}
+        <SlideDown closed={establishingFirebaseConnection || !connected}>
+          <Overview key="overviewsection" />
+          <WhatsNext key="whatsnextsection" />
+        </SlideDown>  
       </main>
     )
   }
