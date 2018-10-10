@@ -22,7 +22,6 @@
 
 ## Table of Contents
 1. [Set up your GCP and Firebase Projects](#set-up-your-gcp-and-firebase-projects)
-2. [Clone this repo in Cloud shell](#clone-this-repo-in-cloud-shell)
 3. [Run the Quickstart Script](#run-the-quickstart-script)
 4. [Add your devices public key to your IoT Core Registry](#add-your-device-public-key-to-your-iot-core-registry)
 5. [Update your AVR-IoT device firmware](#update-your-avr-iot-device-firmware)
@@ -72,7 +71,7 @@ The quickstart requires that you have a Firebase project connected to a GCP proj
 
 4. Click 'Add Firebase'.
 
-## Clone this repo in Cloud shell
+## Run the Quickstart Script
 
 1. Open Cloud Shell from your project.
 
@@ -86,19 +85,17 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
    to clone this repo, enter the newly created directory, and run the quickstart script.
 
-## Run the Quickstart Script
-
-1. At the prompt, enter your AVR-IoT device's UID. Your device's UID is the last portion of the url you see after launching CLICK-ME.HTM from the device. 
+3. At the prompt, enter your AVR-IoT device's UID. Your device's UID is the last portion of the url you see after launching CLICK-ME.HTM from the device. 
 
     <img src="https://storage.googleapis.com/avr-iot-media/device_uid.png" height="30">
 
-2. If you would like to customize your IOT Core registry name, you may do so at the IoT core registry name prompt.
+4. If you would like to customize your IOT Core registry name, you may do so at the IoT core registry name prompt.
 
     IoT core registry names must start with a letter, use only letters, numbers, hyphens, and the following characters:
 
         + . % _ ~
 
-3. The setup script will run for several minutes.
+5. The setup script will run for several minutes.
     The setup script will:
     * Enable Cloud Functions, IoT, and Pub Sub
     * Create an IoT Core registry called AVR-IOT and register your device
