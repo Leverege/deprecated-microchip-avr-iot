@@ -22,7 +22,6 @@
 
 ## Table of Contents
 1. [Set up your GCP and Firebase Projects](#set-up-your-gcp-and-firebase-projects)
-2. [Clone this repo in Cloud shell](#clone-this-repo-in-cloud-shell)
 3. [Run the Quickstart Script](#run-the-quickstart-script)
 4. [Add your devices public key to your IoT Core Registry](#add-your-device-public-key-to-your-iot-core-registry)
 5. [Update your AVR-IoT device firmware](#update-your-avr-iot-device-firmware)
@@ -44,7 +43,7 @@ script, you'll need to add your device's secure pubkey to the device's entry in 
 
 ## Set up your GCP and Firebase Projects
 
-The quickstart requires that you have a Firebase project connected to a GCP project will billing enabled.
+The quickstart requires that you have a Firebase project connected to a GCP project with billing enabled.
 
 ### GCP Project
 
@@ -72,7 +71,7 @@ The quickstart requires that you have a Firebase project connected to a GCP proj
 
 4. Click 'Add Firebase'.
 
-## Clone this repo in Cloud shell
+## Run the Quickstart Script
 
 1. Open Cloud Shell from your project.
 
@@ -86,19 +85,17 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
    to clone this repo, enter the newly created directory, and run the quickstart script.
 
-## Run the Quickstart Script
-
-1. At the prompt, enter your AVR-IoT device's UID. Your device's UID is the last portion of the url you see after launching CLICK-ME.HTM from the device. 
+3. At the prompt, enter your AVR-IoT device's UID. Your device's UID is the last portion of the url you see after launching CLICK-ME.HTM from the device. 
 
     <img src="https://storage.googleapis.com/avr-iot-media/device_uid.png" height="30">
 
-2. If you would like to customize your IOT Core registry name, you may do so at the IoT core registry name prompt.
+4. If you would like to customize your IOT Core registry name, you may do so at the IoT core registry name prompt.
 
     IoT core registry names must start with a letter, use only letters, numbers, hyphens, and the following characters:
 
         + . % _ ~
 
-3. The setup script will run for several minutes.
+5. The setup script will run for several minutes.
     The setup script will:
     * Enable Cloud Functions, IoT, and Pub Sub
     * Create an IoT Core registry called AVR-IOT and register your device
@@ -130,7 +127,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
 ## Update your AVR-IoT device firmware
 
-1. Navigate to the <a href="http://start.atmel.com/" target="_blank">Atmel START Rapid Development Tool</a>. 
+1. Navigate to the <a href="http://start.atmel.com/" target="_blank">Atmel START Rapid Development Tool</a>. Please note that this software is Windows only. 
 
 2. Click the **Browse Example** button. 
     
@@ -144,7 +141,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
     <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-open-example.png" height="75">
     
-5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID.
+5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID. Under the WLAN Configuration section, enter in your WiFi credentials. Note: the network **must be 2.4Ghz** as the device cannot connect to 5.0 Ghz networks. 
 
     <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-cloudconfig.png" height="225">
     
@@ -164,6 +161,13 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
 And that's it! If you've edited your device with the Atmel START rapid development tool, you should see live data flowing to your new Firebase app at \<your-project-id\>.firebaseapp.com/device/\<your-device-uid\>. 
 
-##
-
-Want to build something bigger? We can help you scale your projects into solutions. [Talk to an IoT expert.](https://www.leverege.com/contact-us) 
+## Building a solution at scale? 
+<p> 
+        Want to build something bigger? We can help you scale your projects into solutions. <a href="https://www.leverege.com/contact-us"><strong>Talk to an IoT expert.</strong></a>
+</p>
+<p> 
+       Whether you're a Fortune 500 company or startup, transforming your current business or creating entirely new businesses, it takes a team with deep experience across verticals and use cases to turn your IoT prototype into an IoT product.
+</p>
+<p align="center"> 
+   <img src="https://storage.googleapis.com/avr-iot-media/lvg-logo-wide.png" height="25">
+    </p>
