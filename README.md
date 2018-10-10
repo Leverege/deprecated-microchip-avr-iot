@@ -141,7 +141,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
     <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-open-example.png" height="75">
     
-5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID. Under the WLAN Configuration section, enter in your WiFi credentials. Note: the network **mus** be 2.4Ghz as the device cannot connect to 5.0 Ghz networks. 
+5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID. Under the WLAN Configuration section, enter in your WiFi credentials. Note: the network **must be 2.4Ghz** as the device cannot connect to 5.0 Ghz networks. 
 
     <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-cloudconfig.png" height="225">
     
