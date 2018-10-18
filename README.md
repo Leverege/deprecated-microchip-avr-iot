@@ -97,7 +97,7 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
 5. The setup script will run for several minutes.
     The setup script will:
-    * Enable Cloud Functions, IoT, and Pub Sub
+    * Enable Cloud Functions, IoT Core, and Pub Sub in your GCP project
     * Create an IoT Core registry called AVR-IOT and register your device
     * Install, build, and deploy Cloud Functions and the UI
 
