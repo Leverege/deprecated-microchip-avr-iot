@@ -12,6 +12,13 @@ printf "\n${BLU}***********************************************\n\n"
 printf "Welcome to the AVR-IoT interactive quick setup\n\n"
 printf "***********************************************${NC}\n\n" 
 
+printf "${GRN}To set up your Firebase credentials for this project\n"
+printf "copy the URL below and paste into a new browser tab.\n"
+printf "Then, copy and paste the authorization code into this terminal.${NC}\n\n"
+
+# log in to firebase
+firebase login --no-localhost
+
 # get device name, project name and device public key from user
 echo 
 read -p 'Please enter device UID: ' DEVICE_ID
@@ -85,8 +92,8 @@ firebase deploy --only hosting
 
 printf "\n${GRN}**************************************\n\n" 
 printf "Setup complete!\n\n"
-printf "${PUR}Remember to add your device\'s public key in the registry:\n\n"
+printf "Remember to add your device\'s public key in the registry:\n\n"
 printf "https://console.cloud.google.com/iot/registries\n\n"
-printf "${GRN}Once you\'ve added the public key, checkout your app:\n\n"
+printf "Once you\'ve added the public key, checkout your app:\n\n"
 printf "${GOOGLE_CLOUD_PROJECT}.firebaseapp.com/device/${DEVICE_ID}\n\n"
 printf "**************************************\n\n${NC}" 
