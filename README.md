@@ -85,17 +85,19 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
 
    to clone this repo, enter the newly created directory, and run the quickstart script.
 
-3. At the prompt, enter your AVR-IoT device's UID. Your device's UID is the last portion of the url you see after launching CLICK-ME.HTM from the device. 
+3. You will need to provide firebase authentication. To do this, copy the authentication URL provided in the shell console, and paste it into a new browser window. Then, log in on that page, authorize the app, and copy the security key. Paste the security key into the shell at the prompt and hit return.
+
+4. At the prompt, enter your AVR-IoT device's UID. Your device's UID is the last portion of the url you see after launching CLICK-ME.HTM from the device. 
 
     <img src="https://storage.googleapis.com/avr-iot-media/device_uid.png" height="30">
 
-4. If you would like to customize your IOT Core registry name, you may do so at the IoT core registry name prompt.
+5. If you would like to customize your IOT Core registry name, you may do so at the IoT core registry name prompt.
 
     IoT core registry names must start with a letter, use only letters, numbers, hyphens, and the following characters:
 
         + . % _ ~
 
-5. The setup script will run for several minutes.
+6. The setup script will run for several minutes.
     The setup script will:
     * Enable Cloud Functions, IoT Core, and Pub Sub in your GCP project
     * Create an IoT Core registry called AVR-IOT and register your device
