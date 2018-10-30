@@ -18,6 +18,8 @@
     </p>
 </p>
 
+Want to see how easy IoT can be? Check out <a href="https://www.leverege.com/blogpost/avr-iot-guide-pushing-data-to-cloud">our blog post with video walkthroughs of the Quick Start!</a> 
+
 (Links will open in this window. Shift+click, command+click, or middle mouse click to open in new window or tab.)
 
 ## Table of Contents
