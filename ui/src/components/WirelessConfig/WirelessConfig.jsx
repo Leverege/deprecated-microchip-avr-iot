@@ -10,6 +10,8 @@ import { getFirebaseData } from '../../actions/DeviceActions';
 
 import './WirelessConfig.less'
 
+function noop() {}
+
 class WirelessConfig extends React.Component {
   constructor( props ) {
     super( props );
@@ -17,7 +19,7 @@ class WirelessConfig extends React.Component {
   }
 
   componentDidMount() {
-    document.getElementById( 'setup-video' ).play()
+    document.getElementById( 'setup-video' ).play().catch( noop )
   }
 
   componentDidUpdate = () => {
@@ -49,7 +51,7 @@ class WirelessConfig extends React.Component {
             If WiFi connection is successful, you should see your blue LED light up on the device.
           </p>
           <div className="wireless-config-connected-video">
-            <video loop autoplay muted id="connectedVideo">
+            <video loop autoPlay muted id="connectedVideo">
               <source src="https://storage.googleapis.com/avr-iot-media/avr-iot_wifi_connected.mp4" />
             </video>
           </div>
@@ -102,8 +104,16 @@ class WirelessConfig extends React.Component {
         <ContentWrapper className="wireless-config-guide-wrapper">
           <h4>Wifi Troubleshooting Guide</h4>
           <ul className="wireless-config-guide">
-            <li>Guide for <a href="#">Mac Users</a></li>
-            <li>Guide for <a href="#">PC Users</a></li>
+            <li>
+Guide for
+{' '}
+<a href="#">Mac Users</a>
+</li>
+            <li>
+Guide for
+{' '}
+<a href="#">PC Users</a>
+</li>
           </ul>
           <Button href="/help" text="Get Help" className="wireless-config-help flat" color="blue" />
         </ContentWrapper>
