@@ -1,9 +1,7 @@
 import { 
   MAX_DATA_POINTS,
-  SET_DEVICE_SN, 
   GET_DEVICE_DATA_SUCCESS,
   GET_DEVICE_DATA_ERROR,
-  SET_TIME_OFFSET,
   GET_DEVICE_DATA_REQUEST } from '../actions/DeviceActions';
 
 const initialState = {
@@ -19,25 +17,16 @@ const initialState = {
     error : null
   },
   lastUpdate : '',
-  offset : 0
 }
 
 export default function DeviceReducer( state = initialState, action ) {
   switch ( action.type ) {
-    case SET_DEVICE_SN: {
-      return { ...state, deviceSN : action.sn };
-    }
-
     case GET_DEVICE_DATA_REQUEST: {
       return { ...state, establishingFirebaseConnection : true, connectedToFirebase : false }
     }
 
     case GET_DEVICE_DATA_ERROR: {
       return { ...state, establishingFirebaseConnection : false, connectedToFirebase : false }
-    }
-
-    case SET_TIME_OFFSET: {
-      return { ...state, offset : action.offset }
     }
 
     case GET_DEVICE_DATA_SUCCESS: {
@@ -51,7 +40,7 @@ export default function DeviceReducer( state = initialState, action ) {
       return { 
         ...state, 
         deviceData : updatedData, 
-        lastUpdate : Date.now() + state.offset, 
+        lastUpdate : Date.now() + action.offset, 
         connectedToFirebase : true, 
         establishingFirebaseConnection : false 
       }

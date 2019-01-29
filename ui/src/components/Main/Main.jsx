@@ -10,20 +10,19 @@ import InfoSection from '../InfoSection/InfoSection'
 import WhatsNext from './WhatsNext'
 import Overview from './Overview'
 import { 
-  setDeviceSn, 
   getFirebaseData, 
   getDeviceDataError,
-  MAX_DATA_AGE,
+  deviceManager,
 } from '../../actions/DeviceActions'
 
 import './Main.less'
 
 class Main extends React.Component {
   componentDidMount() {
-    const UID = this.props.match.params.uid
-    this.props.dispatch( setDeviceSn( UID ) )
-    this.props.dispatch( getFirebaseData( UID ) )
-    this.tick(); // start the timeout timer
+    const { match : { params : { uid : UID } }, dispatch } = this.props
+    deviceManager.setDevice( UID )
+    dispatch( getFirebaseData( UID ) )
+    this.tick() // start the timeout timer
   }
 
   componentWillUnmount() { 
@@ -32,21 +31,22 @@ class Main extends React.Component {
 
   tick = () => {
     // dispatch data connection error & stop countdown if data age exceeds max
-    const estServerTime = this.props.offset ? new Date().getTime() + this.props.offset : Date.now()
+    const { lastUpdate, connectedToFirebase, dispatch } = this.props
+    const estServerTime = deviceManager.offset ? new Date().getTime() + deviceManager.offset : Date.now()
     const nextSecond = 1000 - ( estServerTime % 1000 )
     this.timer = setTimeout( this.tick, nextSecond );
-    const timeExceeded = ( estServerTime - this.props.lastUpdate ) / 1000 > MAX_DATA_AGE;
-    if ( this.props.connectedToFirebase && timeExceeded ) {
-      this.props.dispatch( getDeviceDataError() );
+    const timeExceeded = ( estServerTime - lastUpdate ) / 1000 > deviceManager.maxDataAge
+    if ( connectedToFirebase && timeExceeded ) {
+      dispatch( getDeviceDataError() );
     }
   }
   
   render() {
-    const { establishingFirebaseConnection } = this.props
-    const connected = ( this.props.deviceConnected && !!this.props.deviceSN && this.props.connectedToFirebase )
+    const { establishingFirebaseConnection : tryingToConnect, deviceConnected } = this.props
+    const connected = deviceConnected && deviceManager.device
 
     let main
-    if ( establishingFirebaseConnection ) {
+    if ( tryingToConnect ) {
       main = (
         <InfoSection 
           title="" 
@@ -65,7 +65,7 @@ class Main extends React.Component {
       <main className="main">
         <WelcomePane minimal />
         {main}
-        <SlideDown closed={establishingFirebaseConnection || !connected}>
+        <SlideDown closed={tryingToConnect || !connected}>
           <Overview key="overviewsection" />
           <WhatsNext key="whatsnextsection" />
         </SlideDown>  
@@ -76,12 +76,10 @@ class Main extends React.Component {
 }
 
 const mapStateToProps = state => ( {
-  deviceSN : state.DeviceReducer.deviceSN,
   deviceConnected : state.DeviceReducer.deviceConnected,
   establishingFirebaseConnection : state.DeviceReducer.establishingFirebaseConnection,
   connectedToFirebase : state.DeviceReducer.connectedToFirebase,
   lastUpdate : state.DeviceReducer.lastUpdate,
-  offset : state.DeviceReducer.offset
 } )
 
 export default connect( mapStateToProps )( Main )

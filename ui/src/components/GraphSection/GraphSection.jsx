@@ -4,6 +4,7 @@ import { ThreeBounce } from 'better-react-spinkit'
 import TileInset from '../TileInset/TileInset'
 import InfoSection from '../InfoSection/InfoSection'
 import { NumericalGraph } from '../graph/Graph'
+import { deviceManager } from '../../actions/DeviceActions'
 
 import './GraphSection.less';
 
@@ -38,11 +39,12 @@ class GraphSection extends React.Component {
   }
 
   render() {
-    const { deviceSN, deviceData, firebaseAnimationComplete, connectedToFirebase } = this.props
+    const { deviceData, firebaseAnimationComplete } = this.props
+    const device = deviceManager.device
     const charts = this.renderGraphs( deviceData, !firebaseAnimationComplete )
 
     return (
-      <InfoSection className="graphs" title={`Device UID: ${deviceSN}`}>
+      <InfoSection className="graphs" title={`Device UID: ${device}`}>
         <div className="graphs-wrapper">
           { charts }
         </div>
@@ -55,7 +57,6 @@ const mapStateToProps = state => ( {
   deviceData : state.DeviceReducer.deviceData,
   connectedToFirebase : state.DeviceReducer.connectedToFirebase,
   firebaseAnimationComplete : state.UIReducer.animationComplete.firebase,
-  deviceSN : state.DeviceReducer.deviceSN
 } )
 
 export default connect( mapStateToProps )( GraphSection )
