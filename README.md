@@ -75,7 +75,7 @@ The quickstart requires that you have a Firebase project connected to a GCP proj
 
 ## Run the Quickstart Script
 
-1. Open Cloud Shell from your project.
+1. Open [Cloud Shell](https://console.cloud.google.com) from your project.
 
     <img src="https://storage.googleapis.com/avr-iot-media/cloudshell.png" height="80">
 
