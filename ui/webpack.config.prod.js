@@ -1,8 +1,8 @@
-const path = require( 'path' );
+const path = require( 'path' )
 const webpack = require( 'webpack' )
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' )
-const combineLoaders = require( 'webpack-combine-loaders' );
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const combineLoaders = require( 'webpack-combine-loaders' )
+const ExtractTextPlugin = require( 'mini-css-extract-plugin' )
 const Dotenv = require( 'dotenv-webpack' );
 const autoprefixer = require( 'autoprefixer' )
 const postcssnested = require( 'postcss-nested' )
@@ -103,4 +103,4 @@ module.exports = {
       { test : /\.(ttf|eot)(\?v=[0-9].[0-9].[0-9])?$/, loader : 'file-loader' }, // ?name=[name].[ext]" } 
     ],
   }
-};
+}

@@ -1,9 +1,9 @@
 const path = require( 'path' );
 const webpack = require( 'webpack' )
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' )
-const combineLoaders = require( 'webpack-combine-loaders' );
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
-const Dotenv = require( 'dotenv-webpack' );
+const combineLoaders = require( 'webpack-combine-loaders' )
+const ExtractTextPlugin = require( 'mini-css-extract-plugin' )
+const Dotenv = require( 'dotenv-webpack' )
 const autoprefixer = require( 'autoprefixer' )
 const postcssnested = require( 'postcss-nested' )
 
@@ -16,6 +16,7 @@ module.exports = {
   devServer : {
     watchOptions : { watch : false, ignored : /node_modules/ },
   },
+  mode : 'development',
 
   // Necessary plugins for hot load
   plugins : [ 
