@@ -145,21 +145,29 @@ git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-
     
     <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-open-example.png" height="75">
     
-5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID. Under the WLAN Configuration section, enter in your WiFi credentials. Note: the network **must be 2.4Ghz** as the device cannot connect to 5.0 Ghz networks. 
+5. Scroll down to the Cloud Configuration section, and enter your GCP Project ID and Registry ID. 
 
-    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-cloudconfig.png" height="225">
+    <img src="https://storage.googleapis.com/avr-iot-media/avr-iot-cloud-config.png" height="225">
     
-6. Switch to the **Export Project** tab and click on **Download Pack**.
+6. Select the "WIFI_0" module under "My Software Components" to display the WiFi configuration settings. 
+
+    <img src="https://storage.googleapis.com/avr-iot-media/wifi-comps.png" height="225">
+    
+7. Under the WLAN Configuration section, enter in your WiFi credentials. Note: the network **must be 2.4Ghz** as the device cannot connect to 5.0 Ghz networks. 
+
+    <img src="https://storage.googleapis.com/avr-iot-media/wlan-config.png" height="225">
+    
+8. Switch to the **Export Project** tab and click on **Download Pack**.
 
     <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/START-export-dl.png" height="300">
 
-7. Open the .atzip file in Atmel Studio and select **Build Solution** under the Build menu bar (or hit F7). Atmel Studio will generate a .hex file in the folder where you saved your project. 
+9. Open the .atzip file in Atmel Studio and select **Build Solution** under the Build menu bar (or hit F7). Atmel Studio will generate a .hex file in the folder where you saved your project. 
    
    <img src="https://storage.googleapis.com/avr-iot-media/Microchip%20Assets/Atmel-build-solution.png" height="225">
 
    By default, it will be located in ..\Atmel_Studio\7.0\\<YourProjectName\>\\<YourProjectName\>\Debug 
 
-8. Drag and drop the .hex project file into your CURIOSITY drive.
+10. Drag and drop the .hex project file into your CURIOSITY drive.
 
 ## View your live data!
 
