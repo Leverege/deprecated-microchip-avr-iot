@@ -82,7 +82,7 @@ The quickstart requires that you have a Firebase project connected to a GCP proj
 2. In the shell, run 
 
 ```bash
-git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-iot && bash setup.sh
+git clone https://github.com/Leverege/microchip-avr-iot.git && cd microchip-avr-iot/setup && bash setup.sh
 ```
 
    to clone this repo, enter the newly created directory, and run the quickstart script.

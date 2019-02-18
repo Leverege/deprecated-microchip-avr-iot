@@ -1,15 +1,14 @@
 # node_modules
-ui/node_modules/
-cloud-functions/node_modules
-cloud-functions/functions/node_modules
+setup/ui/node_modules/
+setup/functions/node_modules
 
 # build files
-ui/build
-ui/dist
-ui/image
+setup/ui/build
+setup/ui/dist
+setup/ui/image
 
 # auto-generated config files
-config.txt
+setup/config.txt
 
 # secrets
-cloud-functions/serviceAccount.json
+setupd/functions/serviceAccount.json
