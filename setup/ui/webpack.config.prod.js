@@ -3,7 +3,6 @@ const webpack = require( 'webpack' )
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' )
 const combineLoaders = require( 'webpack-combine-loaders' )
 const ExtractTextPlugin = require( 'mini-css-extract-plugin' )
-const Dotenv = require( 'dotenv-webpack' );
 const autoprefixer = require( 'autoprefixer' )
 const postcssnested = require( 'postcss-nested' )
 const UglifyJSPlugin = require( 'uglifyjs-webpack-plugin' )
@@ -34,9 +33,6 @@ module.exports = {
         comments : false
       }
     } } ),
-    new Dotenv( {
-      path : './.env', // Path to .env file (this is the default) 
-    } ),
     new webpack.LoaderOptionsPlugin( {
       options : {
         context : `${__dirname}/dist/`,

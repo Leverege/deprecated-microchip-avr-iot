@@ -3,7 +3,6 @@ const webpack = require( 'webpack' )
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' )
 const combineLoaders = require( 'webpack-combine-loaders' )
 const ExtractTextPlugin = require( 'mini-css-extract-plugin' )
-const Dotenv = require( 'dotenv-webpack' )
 const autoprefixer = require( 'autoprefixer' )
 const postcssnested = require( 'postcss-nested' )
 
@@ -23,9 +22,6 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin( 'style.css', { allChunks : true } ),
-    new Dotenv( {
-      path : './.env', // Path to .env file (this is the default) 
-    } ),
     new webpack.LoaderOptionsPlugin( {
       options : {
         context : __dirname,

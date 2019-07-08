@@ -12,13 +12,6 @@ printf "\n${BLU}***********************************************\n\n"
 printf "Welcome to the AVR-IoT interactive quick setup\n\n"
 printf "***********************************************${NC}\n\n" 
 
-printf "${GRN}To set up your Firebase credentials for this project\n"
-printf "copy the URL below and paste into a new browser tab.\n"
-printf "Then, copy and paste the authorization code into this terminal.${NC}\n\n"
-
-# log in to firebase
-firebase login --no-localhost
-
 # get device name, project name and device public key from user
 echo 
 read -p 'Please enter device UID: ' DEVICE_ID
@@ -52,7 +45,6 @@ fi
 REG_NAME="$(echo "${REG_NAME}" | tr -d '[:space:]')"
 done
 
-
 # set the project and tell firebase to use it firebase
 gcloud config set project $GOOGLE_CLOUD_PROJECT
 firebase use $GOOGLE_CLOUD_PROJECT
@@ -78,7 +70,7 @@ npm install --prefix ./ui/
 
 # retrieve UI config vars 
 firebase setup:web > config.txt
-node getFirebaseConfig.js $DEVICE_ID config.txt
+node getFirebaseConfig.js config.txt
 
 # build UI
 printf "${BLU}Creating a production build of the UI (this may take a few minutes)...\n${NC}"
@@ -92,8 +84,8 @@ firebase deploy --only hosting
 
 printf "\n${GRN}**************************************\n\n" 
 printf "Setup complete!\n\n"
-printf "Remember to add your device\'s public key in the registry:\n\n"
+printf "${PUR}Remember to add your device\'s public key in the registry:\n\n"
 printf "https://console.cloud.google.com/iot/registries\n\n"
-printf "Once you\'ve added the public key, checkout your app:\n\n"
+printf "${GRN}Once you\'ve added the public key, checkout your app:\n\n"
 printf "${GOOGLE_CLOUD_PROJECT}.firebaseapp.com/device/${DEVICE_ID}\n\n"
 printf "**************************************\n\n${NC}" 
