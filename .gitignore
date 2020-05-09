@@ -1,6 +1,7 @@
 # node_modules
 setup/ui/node_modules/
 setup/functions/node_modules
+setup/node_modules/
 
 # build files
 setup/ui/build
