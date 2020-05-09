@@ -10,7 +10,7 @@
   "dependencies": {
     "better-react-spinkit": "^2.0.4",
     "classnames": "^2.2.6",
-    "firebase": "^6.2.4",
+    "firebase": "^7.14.3",
     "muicss": "^0.9.42",
     "prop-types": "^15.7.2",
     "query-string": "^6.8.1",
@@ -42,7 +42,7 @@
     "babel-preset-node8": "^1.2.0",
     "babel-root-import": "^4.1.8",
     "chai": "^4.2.0",
-    "copy-webpack-plugin": "^5.0.3",
+    "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^2.1.1",
     "dotenv-webpack": "^1.7.0",
     "eslint": "^6.0.1",
@@ -53,12 +53,12 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-security": "^1.4.0",
-    "eslint-watch": "^5.1.2",
+    "eslint-watch": "^6.0.1",
     "file-loader": "^3.0.1",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.5.0",
-    "mocha": "^6.1.4",
+    "mocha": "^7.1.2",
     "postcss-less": "^3.1.4",
     "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.1.2",
@@ -68,6 +68,6 @@
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5",
     "webpack-combine-loaders": "^2.0.4",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.11.0"
   }
 }

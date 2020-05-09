@@ -10,7 +10,7 @@ NC='\033[0m'
 
 printf "\n${BLU}***********************************************\n\n"
 printf "Welcome to the AVR-IoT interactive quick setup\n\n"
-printf "***********************************************${NC}\n\n" 
+printf "***********************************************${NC}\n\n"
 
 printf "${GRN}To set up your Firebase credentials for this project\n"
 printf "copy the URL below and paste into a new browser tab.\n"
@@ -20,7 +20,7 @@ printf "Then, copy and paste the authorization code into this terminal.${NC}\n\n
 firebase login --no-localhost
 
 # get device name, project name and device public key from user
-echo 
+echo
 read -p 'Please enter device UID: ' DEVICE_ID
 echo
 
@@ -37,7 +37,7 @@ printf "\n${RED}IoT Core Registry names must be between 3-255 characters,\nstart
 echo '- . % ~ +'
 echo
 printf "${NC}"
-fi 
+fi
 
 # get user REG_NAME input
 read -p 'Choose an IoT Core registry name (return for AVR-IOT): ' REG_NAME
@@ -55,6 +55,7 @@ done
 # set the project and tell firebase to use it firebase
 gcloud config set project $GOOGLE_CLOUD_PROJECT
 firebase use $GOOGLE_CLOUD_PROJECT
+firebase apps:create web $GOOGLE_CLOUD_PROJECT-web-app
 
 # enable cloud functions, IoT core, and pub sub
 gcloud services enable cloudfunctions.googleapis.com cloudiot.googleapis.com pubsub.googleapis.com
@@ -70,13 +71,14 @@ printf "\n${BLU}Creating IoT core registry ${REG_NAME}${NC}"
 gcloud iot devices create "d$DEVICE_ID" --region=$CLOUD_REGION --registry=$REG_NAME
 
 #install npm dependencies
-printf "${BLU}Installing Cloud Function dependencies (this may take a few minutes)...\n${NC}" 
+printf "${BLU}Installing Cloud Function dependencies (this may take a few minutes)...\n${NC}"
 npm install --prefix ./functions/
 printf "\n${BLU}Installing UI dependencies (this may take a few minutes)...\n${NC}"
 npm install --prefix ./ui/
 
-# retrieve UI config vars 
-firebase setup:web > config.txt
+# retrieve UI config vars
+WEB_APP_ID=$(firebase apps:list web -j | jq -r '.result[0].appId')
+firebase apps:sdkconfig web $WEB_APP_ID > config.txt
 node getFirebaseConfig.js config.txt
 
 # build UI
@@ -84,15 +86,15 @@ printf "${BLU}Creating a production build of the UI (this may take a few minutes
 npm run build --prefix ./ui
 
 chmod +x ./ui/src/Config.js
-
+npm install --save firebase-functions@latest
 firebase deploy --only functions:recordMessage
 firebase deploy --only database
 firebase deploy --only hosting
 
-printf "\n${GRN}**************************************\n\n" 
+printf "\n${GRN}**************************************\n\n"
 printf "Setup complete!\n\n"
 printf "${PUR}Remember to add your device\'s public key in the registry:\n\n"
-printf "https://console.cloud.google.com/iot/registries\n\n"
+printf  "https://console.cloud.google.com/iot/locations/${CLOUD_REGION}/registries/${REG_NAME}/devices/details/d${DEVICE_ID}/authentication?project=${GOOGLE_CLOUD_PROJECT}\n\n"
 printf "${GRN}Once you\'ve added the public key, checkout your app:\n\n"
-printf "${GOOGLE_CLOUD_PROJECT}.firebaseapp.com/device/${DEVICE_ID}\n\n"
-printf "**************************************\n\n${NC}" 
+printf "https://${GOOGLE_CLOUD_PROJECT}.firebaseapp.com/device/${DEVICE_ID}\n\n"
+printf "**************************************\n\n${NC}"
