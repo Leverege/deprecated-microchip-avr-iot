@@ -77,7 +77,7 @@ printf "\n${BLU}Installing UI dependencies (this may take a few minutes)...\n${N
 npm install --prefix ./ui/
 
 # retrieve UI config vars
-WEB_APP_ID=$(firebase apps:list web -j | jq '.result[0].appId')
+WEB_APP_ID=$(firebase apps:list web -j | jq -r '.result[0].appId')
 firebase apps:sdkconfig web $WEB_APP_ID > config.txt
 node getFirebaseConfig.js config.txt
 
