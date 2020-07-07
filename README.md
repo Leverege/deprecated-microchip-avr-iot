@@ -175,7 +175,7 @@ And that's it! If you've edited your device with the Atmel START rapid developme
 
 ## Building a solution at scale? 
 <p> 
-        Want to build something bigger? We can help you scale your projects into solutions. <a href="https://www.leverege.com/contact-us"><strong>Talk to an IoT expert.</strong></a>
+        Want to build something bigger? We can help you scale your projects into solutions. <a href="https://www.leverege.com/form/contact-us"><strong>Talk to an IoT expert.</strong></a>
 </p>
 <p> 
        Whether you're a Fortune 500 company or startup, transforming your current business or creating entirely new businesses, it takes a team with deep experience across verticals and use cases to turn your IoT prototype into an IoT product.
