@@ -8,6 +8,18 @@ GRN='\033[0;32m'
 PUR='\033[0;35m'
 NC='\033[0m'
 
+showspin()
+{
+  local i sp n
+  sp='⣾⣽⣻⢿⡿⣟⣯⣷'
+  n=${#sp}
+  tput civis
+  trap 'tput cnorm' EXIT
+  while sleep 0.1; do
+      printf "${sp:i++%n:1}\b"
+  done
+}
+
 printf "\n${BLU}***********************************************\n\n"
 printf "Welcome to the AVR-IoT interactive quick setup\n\n"
 printf "***********************************************${NC}\n\n" 
@@ -53,38 +65,62 @@ REG_NAME="$(echo "${REG_NAME}" | tr -d '[:space:]')"
 done
 
 # set the project and tell firebase to use it firebase
+printf "\n${BLU}Creating Firebase web app ${REG_NAME}\n${NC}"
 gcloud config set project $GOOGLE_CLOUD_PROJECT
 firebase use $GOOGLE_CLOUD_PROJECT
+firebase apps:create web microchip-dev-board-app > app.txt
+GET_CONFIG=$(tail -1 app.txt)
 
 # enable cloud functions, IoT core, and pub sub
-gcloud services enable cloudfunctions.googleapis.com cloudiot.googleapis.com pubsub.googleapis.com
+printf "\n${BLU}Enabling cloud functions... ${NC}"
+gcloud services enable cloudfunctions.googleapis.com cloudiot.googleapis.com pubsub.googleapis.com > /dev/null 2>&1
+printf "${BLU}DONE. \n${NC}"
 
 # create pubsub topic
-gcloud pubsub topics create avr-iot
+printf "\n${BLU}Creating pubsub topic... ${NC}"
+gcloud pubsub topics create avr-iot > /dev/null 2>&1
+printf "${BLU}DONE. \n${NC}"
 
+printf "\n${BLU}Creating IoT core registry ${REG_NAME}...\n${NC}"
 # create IoT core device registry
 gcloud iot registries create $REG_NAME --region=$CLOUD_REGION --event-notification-config=topic=avr-iot
 
 # add device to registry
-printf "\n${BLU}Creating IoT core registry ${REG_NAME}${NC}"
+printf "\n${BLU}Adding device d${DEVICE_ID} to registry... \n${NC}"
 gcloud iot devices create "d$DEVICE_ID" --region=$CLOUD_REGION --registry=$REG_NAME
 
 #install npm dependencies
-printf "${BLU}Installing Cloud Function dependencies (this may take a few minutes)...\n${NC}" 
-npm install --prefix ./functions/
-printf "\n${BLU}Installing UI dependencies (this may take a few minutes)...\n${NC}"
-npm install --prefix ./ui/
+printf "\n${BLU}Installing Cloud Function dependencies (this may take a few minutes)...${NC}"
+showspin &
+spin_pid=$!
+npm install --prefix ./functions/ > /dev/null 2>&1
+kill $spin_pid &>/dev/null
+printf "${BLU}DONE.\n${NC}"
+printf "\n${BLU}Installing UI dependencies (this may take a few minutes)...${NC}"
+showspin &
+spin_pid=$!
+npm install --prefix ./ui/ > /dev/null 2>&1
+kill $spin_pid &>/dev/null
+printf "${BLU}DONE.\n${NC}"
 
-# retrieve UI config vars 
-firebase setup:web > config.txt
+# retrieve UI config vars
+eval $GET_CONFIG > config.txt
 node getFirebaseConfig.js config.txt
 
+# cleanup ephemera
+rm config.txt app.txt
+
 # build UI
-printf "${BLU}Creating a production build of the UI (this may take a few minutes)...\n${NC}"
-npm run build --prefix ./ui
+printf "\n${BLU}Creating a production build of the UI (this may take a few minutes)...${NC}"
+showspin &
+spin_pid=$!
+npm run build --prefix ./ui > /dev/null 2>&1
+kill $spin_pid &>/dev/null
+printf "${BLU}DONE.\n${NC}"
 
 chmod +x ./ui/src/Config.js
 
+printf "${BLU}Deploying UI (this may take a few minutes)...\n${NC}"
 firebase deploy --only functions:recordMessage
 firebase deploy --only database
 firebase deploy --only hosting
@@ -94,5 +130,5 @@ printf "Setup complete!\n\n"
 printf "${PUR}Remember to add your device\'s public key in the registry:\n\n"
 printf "https://console.cloud.google.com/iot/registries\n\n"
 printf "${GRN}Once you\'ve added the public key, checkout your app:\n\n"
-printf "${GOOGLE_CLOUD_PROJECT}.firebaseapp.com/device/${DEVICE_ID}\n\n"
+printf "https://${GOOGLE_CLOUD_PROJECT}.firebaseapp.com/device/${DEVICE_ID}\n\n"
 printf "**************************************\n\n${NC}" 
