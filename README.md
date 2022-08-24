@@ -1,4 +1,4 @@
-# DEPRECATED
+# ⛔️ DEPRECATED
 
 This repo is deprecated and will no longer be maintained. Please visit Microchip's AVR and PIC git resources for up-to-date information: https://github.com/microchip-pic-avr-solutions
 
