@@ -2,6 +2,10 @@
 
 This repo is deprecated and will no longer be maintained. Please visit Microchip's AVR and PIC git resources for up-to-date information: https://github.com/microchip-pic-avr-solutions
 
+Information below is for archival purposes only, and may be removed at any point.
+
+---
+
 <p align="center">
     <a href="https://www.microchip.com/">
         <img src="https://storage.googleapis.com/avr-iot-media/microchip_round_logo.png" alt="Microchip logo" width=72 height=72 />
