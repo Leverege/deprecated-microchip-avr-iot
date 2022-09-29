@@ -26,7 +26,7 @@
     "react-toggle-switch": "^3.0.4",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "victory": "^35.0.8"
+    "victory": "^36.6.8"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
